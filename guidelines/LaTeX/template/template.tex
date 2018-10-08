@@ -1,0 +1,278 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hyphens]{url}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{geometry}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{mathdots}
+\usepackage{amssymb}
+\usepackage{minted}
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{accents}
+\usepackage{gensymb}
+\usepackage{indentfirst}
+\usepackage{courier}
+\usepackage{framed}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{appendix}
+\usepackage{mdframed}
+\usepackage{verbatim}
+\usepackage{xspace}
+\usepackage{hyperref}
+\AtBeginEnvironment{subappendices}{%
+	\section*{Appendix}
+	\addcontentsline{toc}{section}{Appendices}
+}
+
+%\lstset{language=C++,
+%                basicstyle=\ttfamily,
+%                keywordstyle=\color{blue}\ttfamily,
+%                stringstyle=\color{red}\ttfamily,
+%                commentstyle=\color{green}\ttfamily,
+%                morecomment=[l][\color{magenta}]{\#}
+%}
+
+\definecolor{keywordcolor}{rgb}{0,0,0.45}
+\definecolor{stringcolor}{rgb}{0.45,0.45,0.45}
+\definecolor{commentcolor}{rgb}{0,0.3,0}
+
+\lstset{
+	language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	%numberstyle=\tiny,
+	frame=tb,
+	columns=fullflexible,
+	showstringspaces=false,
+	breaklines=true,
+	tabsize=4,
+	keywordstyle=\color{keywordcolor}\footnotesize\bf\ttfamily,
+	stringstyle=\color{stringcolor}\footnotesize\ttfamily,
+	commentstyle=\color{commentcolor}\it\sffamily
+}
+% \lstset{basicstyle=\ttfamily,breaklines=true}
+\lstloadlanguages{C++}
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+\addtolength{\parskip}{\baselineskip}  
+\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
+
+\renewcommand{\arraystretch}{0.8}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\imagewidth}{0.8\textwidth}
+
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\geometry{
+	top=0.9in,
+	inner=0.7in,
+	outer=0.7in,
+	bottom=0.9in,
+	headheight=2ex,
+	headsep=1ex,
+}
+\pagestyle{fancy}
+%\fancyhf{}
+%\setlength{\headsep}{0.2in}
+
+
+\fancypagestyle{firststyle}
+{
+	\chead{}
+	\setlength{\headsep}{0.0in}
+}
+\hypersetup{
+	unicode=true,
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=black,
+	filecolor=black,
+	urlcolor=blue
+}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{%
+	\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+		\addtolength\thm@preskip\parskip
+	}%
+}
+\endgroup
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{proposition}{Proposition}[section]
+%\theoremstyle{empty}
+\newtheorem*{namedthm}{Theorem}
+
+% indention size
+%\setlength{\parindent}{19pt}
+\setlength{\parindent}{0pt}
+
+% paragraph spacing
+\setlength{\parskip}{1em}
+
+% line spacing
+\linespread{1}
+
+%\setcounter{tocdepth}{1}
+
+
+% Documenting starts here! Please do not change above! 
+
+\newcommand{\mytitle}
+{
+	\textbf {
+		inzva Algorithm Programme 2018-2019\\ \ \\
+		Bundle 2 \\ \ \\ 
+		Algorithms - 1 \\ \ \\
+	}
+}
+
+\title{\vspace{-2em}\mytitle\vspace{-0.3em}}
+
+\author{
+	\textbf{Editor}\\
+	Editor's Name  \\ \ \\ 
+	\textbf{Reviewers} \\ 
+	Reviewer's Name\\
+	Reviewer's Name
+}
+
+\date{}
+\begin{document}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth/4]{inzva-logo.png}
+		\label{fig:inzva}
+	\end{figure}
+	\maketitle
+	
+	\cleardoublepage
+	\tableofcontents
+	\markboth{Table of Contents}{}
+	\cleardoublepage
+	
+	\section{Basics}
+	
+	\subsection{Listing}
+	
+	A list example from intro-1 document:
+	\begin{itemize}
+		\item \texttt{ls} - list files in current directory. Usage: \texttt{ls}
+		\item \texttt{cd} - change directory. Usage: \texttt{cd \textasciitilde/Desktop}.
+		\item \texttt{mkdir} - make a new directory. Usage: \texttt{mkdir directory\_name}
+		\item \texttt{mv} - move command(cut). Usage: \texttt{mv source\_path destination\_path}.
+		\item \texttt{cp} - copy command. Usage: \texttt{cp source\_path destination\_path}
+		\item \texttt{rm} - remove command. Usage: \texttt{rm file\_path}
+	\end{itemize}
+
+	\subsection{Links and References}
+
+	Link to \href{https://inzva.com}{inzva} web page.
+	
+	"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human."\cite{turing}
+	
+	\subsection{Pages}
+
+	After this points, we can clear the remaining part of the page with \textbf{cleardoublepage} command
+	
+	\cleardoublepage
+	
+	\section{Codes and Math}
+	
+	\subsection{Codes}
+	
+		\subsubsection{C++}
+		
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+int fibonacci( int n ){
+
+	int result = 1, previous = 1;
+
+	for( int i=2 ; i<=n ; i++ ){
+		int tmp = result;
+		result += previous;
+		previous = tmp;
+	}
+
+	return result;
+}
+\end{minted}
+		
+		\subsubsection{Python}
+		
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{python}
+class Fraction:
+
+	def __init__(self, numerator, denominator):
+		self.numerator, self.denominator = numerator, denominator
+	
+	def bigFraction(a, b):
+	
+		if a.numerator * b.denominator > a.denominator * b.numerator:
+			return a
+	
+		return b
+
+a, b = Fraction(15, 20), Fraction(12, 18)  # Create two Fractions in order to compare them
+biggest = bigFraction(a, b)
+
+print(biggest.numerator, biggest.denominator)
+\end{minted}
+
+	\cleardoublepage
+	
+	\subsection{Mathematical Formulas}
+	
+	You can write mathematical formulas between \$ symbols. Examples:
+	
+	$\frac{f(x+h) - f(x)}{h}$, \ $[2, \sqrt{N}]$, \ $h\sum_{i=1}^{r}i^{2}$, \ $f(x) = x^{\dfrac{3}{5+x}}\cdot(x-20)$
+	
+	You can use double \$ for formatting:
+	
+	$$\int_{0}^{2}f(x)dx = (c + 0.2*2 + 12.5*2^2 + 2^3) - (c + 0.2*0 + 12.5*0^2 + 0^3) = 58.4$$
+	
+	\subsubsection{Functions With Cases}
+	
+	\begin{align*}
+	f(n) &= \begin{cases}
+	1 & \text{if $n = 0$ or $n = 1$\,\, } \\
+	f(n - 1) + f(n - 2) & \text{if $n > 1$\,\,}
+	\end{cases}
+	\end{align*}
+	
+	\begin{thebibliography}{0}
+		
+		\bibitem{turing}
+		"Computing Machinery and Intelligence". Book by Alan Turing, 1950.
+	\end{thebibliography}
+
+\end{document}
