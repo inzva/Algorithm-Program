@@ -189,7 +189,7 @@ This visualization may help you understand how the search algorithms work: \href
 		\subsection{Linear Search}
 			
 Simplest search algorithm is \textit{linear search}, also know as \textit{sequential search}. In this technique, all elements in the collection of the data is checked one by one, if any element matches, algorithm returns the index; otherwise, it returns -1. \\ \\
-In the worse case scenario, the search key may not be in the array, or it may be placed towards the end of it. Under these circumstances, the algorithms may check almost all the elements, it means the time complexity is $O(N)$
+ity is $O(N)$
 
 \begin{figure}[h]
 	\centering
@@ -224,7 +224,7 @@ We can also use binary search on increasing functions in the same way.
 	\item If the key is smaller, it should be on the left side. The right side can be ignored.
 \end{itemize}	
 
-\textbf{Comlexity: }
+\textbf{Complexity: }
 \begin{eqnarray*}
 T(N) &=& T(N / 2) + O(1) \\
 T(N) &=& O(logN)
@@ -280,7 +280,7 @@ In this document, we will implement the first type of unimodal function, and the
 
 \ \ \ \  $m_1$ and $m_2$ can be selected by $m_1 = l + (r - l) / 3$ and $m_2 = r - (r - l) / 3$ to avoid increasing the time complexity.
 
-\textbf{Comlexity: }
+\textbf{Complexity: }
 \begin{eqnarray*}
 	T(N) &=& T(2 \cdot N / 3) + O(1) \\
 	T(N) &=& O(logN)
@@ -343,7 +343,7 @@ void insertionSort(int *ar, int size){
 	\item After the two halves got sorted, merge them in linear time and the array will be sorted. 
 \end{enumerate}	
 
-\textbf{Comlexity: }
+\textbf{Complexity: }
 \begin{eqnarray*}
 	T(N) &=& T(N / 2) + O(N) \\
 	T(N) &=& O(N \cdot logN)
@@ -388,7 +388,7 @@ If the sellected pivot cannot divide the array uniformly after the partitioning,
 	\item Repeat the same algorithm for the left partition and the right partition.
 \end{enumerate}	
 
-\textbf{Comlexity: }
+\textbf{Complexity: }
 \begin{eqnarray*}
 	T(N) &=& T(N / 10) + T(9\cdot N / 10) + O(N) \\
 	T(N) &=& O(N \cdot logN)
@@ -422,7 +422,7 @@ void quickSort(int *ar, int size){
 	\item For each digit from the least significant to the most, sort the array using \textit{Counting Sort} according to corresponding digit. \textit{Counting Sort} is used for keys between specific range, and it counts the number of elements which have different key values. After counting the number of distict key values, we can determine the position of elements in the array. 
 \end{enumerate}	
 
-\textbf{Comlexity: }
+\textbf{Complexity: }
 \begin{eqnarray*}
 	T(N) &=& O(N)
 \end{eqnarray*}
