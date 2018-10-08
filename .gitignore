@@ -1,1 +1,7 @@
 .DS_Store
+*.aux
+*.out
+*.log
+*.synctex.gz
+*.toc
+_minted-*
