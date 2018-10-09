@@ -46,7 +46,7 @@ See the FAQ [here.](https://inzva.com/faq-algorithm-competition-programme)
 
 **HOW TO BE AN EDITOR/PROBLEM SETTER/REVIEWER**
 
-If you want to support the community as an **Editor, Problem Setter or Reviewer**, and get scholarship for your work by [BEV Foundation](bev.foundation), you can find more information and application form via the links below.
+If you want to support the community as an **Editor, Problem Setter or Reviewer**, and get scholarship for your work by [BEV Foundation](https://bev.foundation/), you can find more information and application form via the links below.
 
 **EDITOR**
 
