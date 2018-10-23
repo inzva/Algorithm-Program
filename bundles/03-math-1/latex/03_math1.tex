@@ -267,7 +267,7 @@ For example, we will test the number \textbf{100}. In the naive approach, we wer
 
 If we are going to find a divisor \textbf{C} of a number \textbf{A} which is smaller than or equal than $\sqrt{A}$. We are quite sure that there will be complementary \textbf{D} which is either bigger than or equal to $\sqrt{A}$. (\textbf{C} * \textbf{D} = \textbf{A}).Checking \textbf{D} is redundant since we have already checked its complementary.
 
-Let's see another example, we will test the number 103. It is a proven prime number. Since now we know that looping until $ \sqrt{103} \approx 10.14889 $ is enough. If we find number G that divides 103. We will be sure about there will be a number Z that satisfies $Z = \frac{103}{G}$. Since we do not have a number that divides 103, we should mark 103 as a prime number.
+Let's see another example, we will test the number 103. It is a proven prime number. We know that looping until $ \sqrt{103} \approx 10.14889 $ is enough. If we find number G that divides 103, we will then be sure about there will be a number Z that satisfies $Z = \frac{103}{G}$. Since we do not have a number that divides 103, we should mark 103 as a prime number.
 
 \clearpage
 
@@ -343,7 +343,7 @@ Numbers & 2    & 3     & 4     & 5     & 6     & 7     & ...     & N     \\
 Primality Test Operations & $\sqrt{2}$  & $\sqrt{3}$    & $\sqrt{4}$     & $\sqrt{5}$    & $\sqrt{6}$    & $\sqrt{7}$ & ...  & $\sqrt{N}$     \\
 \end{tabular}
 \end{table}
-We will do $\sqrt{2}$ +  $\sqrt{3}$ +  $\sqrt{4}$ ... +  $\sqrt{N}$ processes. The square root sum is limited by the $N\cdot\sqrt{N}$. Therefore, we would get time complexity as O($n$•$\sqrt{n}$) \cite{sqrtsumformula}.
+We will do the $\sqrt{2}$ +  $\sqrt{3}$ +  $\sqrt{4}$ ... +  $\sqrt{N}$ processes. The square root sum is limited by the $N\cdot\sqrt{N}$. Therefore, we would get time complexity as O($n$•$\sqrt{n}$) \cite{sqrtsumformula}.
 
 
 \clearpage
@@ -393,7 +393,8 @@ int main() {
 \texttt{Time Complexity: O($n$ • $\log{\log{n}}$) } \\ \\
 The Sieve approach was developed by the Greek Mathematician Eratosthenes.  It allows us to obtain the prime states of the numbers between 1 and \textit{n}. 
 
-The algorithm is quite straightforward. We need to start from 1 to $ \sqrt{n} $. If the current number(\textit{i}) is prime, mark every number, that can evenly divisible by \textit{i},  as not prime \cite{sieveprimenumber}.
+The algorithm is quite straightforward. We need to start from 1 to $ \sqrt{n} $. If the current number(\textit{i}) is prime, we can mark every number that's evenly divisible by \textit{i} as not prime \cite{sieveprimenumber}.
+
 
 How do we have the time complexity of O($n*loglogn$)? We need to go until to $\sqrt{n}$ for deleting the numbers \cite{sievecodility}. But why do we have $loglogn$ in the time complexity? How many processes do we do in each prime until O($n$)?\
 
@@ -526,7 +527,7 @@ Therefore,the modular inverse of a, which is b becomes  $a^{m-2} \mod{m}$. We ca
 \clearpage
 
 \subsection{GCD - Greatest Common Divisor}
-Greatest Common Divisor of two numbers \texttt{A} and \texttt{B} is the largest number \texttt{D} that evenly divides both of the numbers \texttt{A} and \texttt{B}. 
+Greatest Common Divisor(GCD) of two numbers \texttt{A} and \texttt{B} is the largest number \texttt{D} that evenly divides both of the numbers \texttt{A} and \texttt{B}. 
 \begin{itemize}
   \item GCD of 2 and 4 is \texttt{2} 
   \item GCD of 3 and 4 is \texttt{1} 
@@ -646,7 +647,7 @@ int main() {
 \clearpage
 
 \subsection{LCM - Least Common Multiple}
-Least Common Multiple of two numbers \texttt{A} and \texttt{B} is the minimum number \texttt{D} that is divisible by both of the numbers \texttt{A} and \texttt{B}. Furthermore, we denote least common divisor with LCM most of the time.
+Least Common Multiple(LCM) of two numbers \texttt{A} and \texttt{B} is the minimum number \texttt{D} that is divisible by both of the numbers \texttt{A} and \texttt{B}. 
 
 \begin{itemize}
   \item LCM of 2 and 4 is \texttt{4} 
@@ -1200,7 +1201,7 @@ Let's prove the latter formula,
 
 \[  \binom {n}{r+1} + \binom {n}{r} = \frac{n!\cdot(r+1) + n!\cdot(n-r)}{(r+1)! \cdot (n-r)!} = \frac{n!\cdot(n+1)}{(r+1)! \cdot (n-r)!}\]
 
-So we can divide  $\binom{n}{r}$ into $\binom{n-1}{r-1}$ and $\binom{n-1}{r}$ recursively to find the $\binom{n}{r}$. However, this dividing would not benefit us unless we do the some caching. We might encounter same n and r's with over and over again in the recursive function. Therefore, we should store the output of $\binom{n}{r}$ to use it again in the near future \cite{combinationfind}.
+So we can divide  $\binom{n}{r}$ into $\binom{n-1}{r-1}$ and $\binom{n-1}{r}$ recursively to find the $\binom{n}{r}$. However, this dividing would not benefit us unless we do some caching operations. We might encounter the same n and r's  over and over again in the recursive function. Therefore, we should store the output of $\binom{n}{r}$ to use it again in the near future \cite{combinationfind}.
 \clearpage
 
 \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
