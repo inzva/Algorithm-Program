@@ -1,0 +1,10 @@
+Case 1: 658
+Case 2: 592
+Case 3: 655
+Case 4: 549
+Case 5: 570
+Case 6: 615
+Case 7: 611
+Case 8: 581
+Case 9: 597
+Case 10: 545

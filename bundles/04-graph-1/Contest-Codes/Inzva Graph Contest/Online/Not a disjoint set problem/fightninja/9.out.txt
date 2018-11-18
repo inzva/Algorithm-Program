@@ -1,0 +1,10 @@
+Case 1: 988
+Case 2: 982
+Case 3: 995
+Case 4: 989
+Case 5: 970
+Case 6: 995
+Case 7: 981
+Case 8: 981
+Case 9: 977
+Case 10: 985
