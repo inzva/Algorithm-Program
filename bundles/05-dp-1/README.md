@@ -1,10 +1,8 @@
 Onsite Contest
 --------------
-* https://www.hackerrank.com
+* https://www.hackerrank.com/contests/inzva-05-dp-1-online-2018
 
 Online Contest
 --------------
-* https://www.hackerrank.com/
+* https://www.hackerrank.com/contests/inzva-05-dp-1-onsite-2018
 
-
-_Links will be added later_
