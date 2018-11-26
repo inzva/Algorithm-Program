@@ -181,6 +181,9 @@
 	\tableofcontents
 	\markboth{Table of Contents}{}
 	\cleardoublepage
+	\section{Introduction}
+	Next section is about the \texttt{Greedy Algorithms} and \texttt{Dynamic Programming}. It will be quite a generous introduction to the concepts and will be followed by some common problems. 
+	
 	\section{Greedy Algorithms}
 	A \textbf{greedy algorithm} is an algorithm that follows the problem solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum. A greedy algorithm never takes back its choices, but directly constructs the final solution. For this reason, greedy algorithms are usually very efficient.\\
     The difficulty in designing greedy algorithms is to find a greedy strategy that always produces an optimal solution to the problem. The locally optimal choices in a greedy algorithm should also be globally optimal. It is often difficult to argue that a greedy algorithm works.
@@ -198,24 +201,26 @@ the value of found denomination from amount.
 Else repeat the steps 2 and 3 for the new value of amount
 	\end{lstlisting}
 	
-	For example, if the coins are the euro coins (in cents) {200,100,50,20,10,5,2,1} and the amount is 548.\\
-	Then the optimal solution is to select coins 200+200+100+20+20+5+2+1 whose sum is 548.
-	\begin{figure}[h!]
-        	\centering
-        	\includegraphics[width=.7\linewidth]{template/coin_greedy.png}
-        	\label{fig:coin_greedy}
-        \end{figure}
-	
 	\begin{lstlisting}[language=Python]
 	def min_coins(coins, amount):
 	    n = len(coins)
         for (i in range(0, n)):
-        while (amount >= coins[i]):
-            #while loop is needed since one coin can be used multiple times
-            amount = amount - coins[i]
-            print(coins[i])
+            while (amount >= coins[i]):
+                #while loop is needed since one coin can be used multiple times
+                amount = amount - coins[i]
+                print(coins[i])
 
     \end{lstlisting}
+    \newpage
+	
+	For example, if the coins are the euro coins (in cents) {200,100,50,20,10,5,2,1} and the amount is 548.\\
+	Then the optimal solution is to select coins 200+200+100+20+20+5+2+1 whose sum is 548.\\
+	\begin{figure}[h!]
+        	\centering
+        	\includegraphics[width=.7\linewidth]{coin_greedy.png}
+        	\label{fig:coin_greedy}
+        \end{figure}
+        
     In the general case, the coin set can contain any kind of coins and the greedy algorithm does not necessarily produce an optimal solution.\\
     We can prove that a greedy algorithm does not work by showing a counterexample where the algorithm gives a wrong answer.\\
     In this problem we can easily find a counterexample: if the coins are {6,5,2} and the target sum is 10, the greedy algorithm produces the solution 6+2+2 while the optimal solution is 5+5.
@@ -232,7 +237,7 @@ Else repeat the steps 2 and 3 for the new value of amount
         If the current job can fit in the current result sequence without missing the deadline, add the current job to the result.
         Else ignore the current job.
 	\end{lstlisting}
-	
+	\newpage
 	\begin{lstlisting}[language=Python]
 	# sample job : ['x', 4, 25] -> [job_id, deadline, profit]
 	# jobs: array of 'job's
@@ -275,7 +280,6 @@ Else repeat the steps 2 and 3 for the new value of amount
     In this case, an optimal schedule for the tasks is C, B, A, D.\\
     In this solution, C yields 5 points, B yields 0 points, A yields \--7 points and D yields \--8 points, so the total score is \--10.\\
     Surprisingly, the optimal solution to the problem does not depend on the deadlines at all, but a correct greedy strategy is to simply perform the tasks sorted by their durations in increasing order. The reason for this is that if we ever perform two tasks one after another such that the first task takes longer than the second task, we can obtain a better solution if we swap the tasks.
-    \newpage
     \subsubsection{Solution}
      \begin{lstlisting}[language=Python]
      def order_tasks(task):
@@ -387,7 +391,7 @@ Else repeat the steps 2 and 3 for the new value of amount
         
 	\begin{figure}[h!]
         	\centering
-        	\includegraphics[width=.8\linewidth]{template/rec_vs_mem.png}
+        	\includegraphics[width=.8\linewidth]{rec_vs_mem.png}
         	\label{fig:recursive_vs_memoization}
         \end{figure}
         
@@ -501,6 +505,10 @@ If the weight of nth item is greater than W, then the nth item cannot be include
     
     for {3, 5} total value is 60
     and for {1, 3, 4} total value is 80
+    
+    But,
+    There is a better solution with less weight:
+    {1, 5} has total weight of 6 which is less than 8 and has total value 90.
     
     Hence,
     Our answer for maximum total value in the knapsack with given items and knapsack will be 80.
@@ -683,12 +691,6 @@ The maximum length Longest Common Suffix is the longest common substring.
 as possible or as small as possible.
         \item \textbf{Counting the number of solutions:} We want to calculate the total number of possible solutions.
 	\end{itemize}
-	\vfill
-	
-	\begin{center}
-	    “Those who cannot remember the past are condemned to repeat it.” \\ George Santayana
-	\end{center}
-	
 	\newpage
 	\begin{thebibliography}{0}
 		
