@@ -1401,8 +1401,8 @@ We are going to use the matrix representation of the Fibonacci sequence. We can 
 \end{bmatrix}
 =
 \begin{bmatrix}
-    1 1  \\
-    1 0
+    1 & 1  \\
+    1 & 0
 \end{bmatrix}
 \times
 \begin{bmatrix}
@@ -1423,8 +1423,8 @@ We are going to use the matrix representation of the Fibonacci sequence. We can 
 \end{bmatrix}
 =
 \begin{bmatrix} 
-    1 1  \\
-    1 0
+    1 & 1  \\
+    1 & 0
 \end{bmatrix}
 \times
 \begin{bmatrix}
@@ -1433,13 +1433,13 @@ We are going to use the matrix representation of the Fibonacci sequence. We can 
 \end{bmatrix}
 =
 \begin{bmatrix} 
-    1 1  \\
-    1 0
+    1 & 1  \\
+    1 & 0
 \end{bmatrix}
 \times
 \begin{bmatrix} 
-    1 1  \\
-    1 0
+    1 & 1  \\
+    1 & 0
 \end{bmatrix}
 \times
 \begin{bmatrix}
@@ -1454,8 +1454,8 @@ Therefore, we can write the following rule for the Fibonacci sequence in matrix 
 \end{bmatrix}
 =
 \begin{bmatrix}
-    1 1  \\
-    1 0
+    1 & 1  \\
+    1 & 0
 \end{bmatrix}^{n}
 \times
 \begin{bmatrix}
@@ -1466,32 +1466,32 @@ So far so good, we have a general matrix equation for the finding Nth Fibonacci 
 
 \begin{equation}
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}^{n} =
   \begin{cases}
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}^{n/2} 
     * 
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}^{n/2} & \text{if n is even} \\\\
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}
     *
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}^{(n-1)/2} 
     * 
     \begin{bmatrix}
-        1 1  \\
-        1 0
+        1 & 1  \\
+        1 & 0
     \end{bmatrix}^{(n-1)/2}& \text{if n is odd} \\\\
   \end{cases}
 \end{equation}
