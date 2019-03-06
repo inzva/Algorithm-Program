@@ -1,7 +1,7 @@
 Onsite Contest
 --------------
-* TBA
+* https://www.hackerrank.com/inzva-10-dp-2-onsite-2019
 
 Online Contest
 --------------
-* TBA
+* https://www.hackerrank.com/inzva-10-dp-2-online-2019
