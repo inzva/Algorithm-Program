@@ -160,6 +160,7 @@
     \author{
     	\textbf{Editor}\\
     	Mehmet Altuner  \\ \ \\ 
+    	\textbf{Reviewer} \\ Osman Karaketir
     }
     
     \date{}
@@ -178,42 +179,38 @@
     	\cleardoublepage
     	
     	\section{Hashing}
-    	We can find a unique integer representation for each string. This process is called Hashing.
+    	We can find a unique integer representation for each string. This process is called Hashing. There are a lot of hashing functions, we look into one of them: Polynomial rolling hash. \\
     	
-    $hash = ((s[0] - 'a') * p^0 + (s[1] - 'a') * p^1 + ... + (s[n-1] - 'a') * p^(n-1)) mod (m)$  
+    	Hash of string s with length k + 1 is: $hash(s) = (s[0] * p^{(k)}+ s[1] * p ^ {(k-1)} + ... + s[k] * p^0) \pmod{b}$ \\
     
         Choose $p$ as a prime number that is bigger than the size of the alphabet, choose $m$ as a large prime number to ensure that the hash value of the string is unique for that particular string.
         
-        Popular $p$ and $m$ values are $p = 31$ and $m = 1e9 + 9$.
+        Popular $p$ and $m$ values are $p = 31$ and $m = 1e9 + 7$.
     	
     	\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-vector <int> hash_func(string text){
-	int p = 31; 
+long long int hash_func(string text){
+	int p = 271; // 
+	long long int result_hash = 0;
 	/*
 	a prime number that is bigger than the size of 
-	the alphabet
+	the alphabet. Alphabet size for char is 256.
 	*/
-	int m = 1e9 + 9; // a very large number
-	lli p_pow = 1;
-
-	vector <int> hash_val(text.size());
-	// vector that will hold the hash_val of the prefixes of text
-
-	// init hash_val[0]
-	hash_val[0] = (text[0] - 'a' + 1) % m;
-	p_pow = p * p_pow;
-
-	for(int i=1; i<text.size(); i++){
-		hash_val[i] = (hash_val[i-1] + (text[i] - 'a' + 1) * p_pow)	% m;
+	long long int m = 1e9 + 7; // a very large number
+	
+	long long int p_pow = 1;
+	
+	for(int i= text.size() - 1; i>=0; i--){
+		result_hash += (s[i]*p_pow) %m;
+		result_hash = result_hash %m
 		p_pow = p * p_pow;
 	}
 
-	return hash_val;
+	return result_hash;
 }
         \end{minted}
     	
-    	Note that in the above implementation, we do not find just a single value for the string. We find the hash values of each substring that starts with the first character. We will make use of this implementation in Rabin-Karp Algorithm for pattern finding. If your purpose is to get the hash value of just a string, you do not have to implement it like this. Just an integer \texttt{hashVal} will be enough.
-    	
+    	 We will make use Polynomial rolling hash in Rabin-Karp Algorithm for pattern finding.
+    	\newpage
     	\section{String Matching Algorithms}
     	
     	\subsection{Basics}
@@ -399,37 +396,44 @@ bool finite_automata(string pattern, string text, string alphabet){
         \subsection{Rabin-Karp Algorithm}
         This algorithm is the only string matching algorithm among the ones we are discussing that does not use prefix function.
         
-        The main idea roots back to Hashing. If you remember the way we implement the hashing function, we hold the hash value of \texttt{str[1..i]} in \texttt{hash[i]}. By the definition of hash, a string's hash value can be considered as unique. So if two hash values of two strings are equal, these two strings are the same. By using this, we can tell if two substrings are matching or not.
+        By the definition of hash, a string's hash value can be considered as unique. So if two hash values of two strings are equal, these two strings are same. By using this, we can tell if two substrings are matching or not. There is very very small probabilty(Birthday Paradox\cite{birth}) of that different strings have same hash value, but we can assume it is impossible. 
         
         \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-bool same(string a, string b){
+bool is_same(string& a, string& b){
     return hash(a) == hash(b);
 }
         \end{minted}
+        How can we use this in string matching? Let's say we are looking for pattern $p$ in text $t$. Length of these strings are $n$ and $m$, respectively. We will traverse in each substring of $p$ of length $n$ in $O(m)$ and check whether they are equal or not. In naive solution, this goes to complexity of $O(n*m)$. But thanks to the properties of hashing we discussed above, checking two string complexity is reduced to $O(1)$, so total complexity is with hashing average $O(m+n)$ but worst case is $O(n*m)$\cite{rabin}.
         
-        How can we use this in string matching? Let's say we are looking for pattern $p$ in text $t$. Length of these strings are $n$ and $m$, respectively. We will traverse in each substring of $p$ of length $n$ in $O(m)$ and check whether they are equal or not. In naive solution, this goes to complexity of $O(n*m)$, but thanks to the properties of hashing we discussed above, this complexity is reduced to $O(1)$.
+
         
-        \newpage
+        If we know hash(str[i..j]) we can easily calculate hash(str[i + 1..j+ 1]) with using properties of rolling hash.
         
-        We know how to get the hash value of a subtring that starts from the first character. How do we get the hash values of other substrings?
+        remember rolling hash: $hash(s) = (s[0] * p^{(k)}+ s[1] * p ^ {(k-1)} + ... + s[k] * p^0) \pmod{b}$
         
-        $hash(str[i..j]) = (hash(j) - hash(i-1)) / p^i$
+        $hash(str[i....i+k]) = (s[i] * p^{(k)}+ s[i+1] * p ^ {(k-1)} + ... + s[i + k] * p^0) \pmod{b}$\newline
+        $hash(str[i+1....i+k+1]) = (s[i+1] * p^{(k)}+ s[i+1] * p ^ {(k-1)} + ... + s[i + k + 1] * p^0) \pmod{b}$
+        
+        We can see that: \newline$hash(str[i+1....i+k+1]) = (hash(str[i....i+k]) - (s[i+1] * p^{(k)}))*p + s[i + k + 1] * p^0 \pmod{b}$
         
         \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-bool rabin_karp(string text, string pattern){
-	vector <int> hash_text, hash_pattern;
-	hash_text = hash_func(text); hash_pattern = hash_func(pattern);
+bool rabin_karp(string& text, string& pattern){
 
 	int m = text.size();
 	int n = pattern.size();
-	int p = 31;
+	int p = 271; //same p using in hash_func
+	long long int mod = 1e9 + 7 //same mod using in hash_func
+	long long int hash_substring, hash_pattern;
+	hash_substring = hash_func(string(text.begin(), text.begin() + n));
+	hash_pattern = hash_func(pattern);
 
-	if(hash_text[n-1] == hash_pattern[n-1])
+	if(hash_substring == hash_pattern)
 		return true;
 
-	for(int i=1; i<m; i++){
-		int hash_substring = (hash_text[i+n-1] - hash_text[i-1]) / pow(p, i);
-		if(hash_substring == hash_pattern[n-1])
+	for(int i = n; i<m; i++){
+		hash_substring = 
+		    ((hash_substring - (text[i - n] * p^(n-1)))*p + text[i] * p^0) % mod;
+		if(hash_substring == hash_pattern)
 			return true;
 	}
 
@@ -446,7 +450,6 @@ bool rabin_karp(string text, string pattern){
         
         \includegraphics[width=\linewidth/2]{suffix_array1.png}
         
-        \newpage
         
         \subsubsection{Naive Approach}
         
@@ -491,7 +494,7 @@ int main()
 }
 
 \end{minted}
-
+        \newpage
         \subsubsection{Pattern Finding}
         
         Since our suffix array is sorted, we can perform search operation efficiently by using binary search.
@@ -583,6 +586,10 @@ int lcp(int x, int y){
     		https://www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
     		\bibitem{rk}
     		https://cp-algorithms.com/string/rabin-karp.html
+    		\bibitem{birth}
+    		https://en.wikipedia.org/wiki/Birthday_paradox
+    		\bibitem{rabin}
+    		https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
     	\end{thebibliography}
     
     \end{document}
