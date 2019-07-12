@@ -37,8 +37,8 @@
     \usepackage{xspace}
     \usepackage{hyperref}
     \AtBeginEnvironment{subappendices}{%
-    	\section*{Appendix}
-    	\addcontentsline{toc}{section}{Appendices}
+        \section*{Appendix}
+        \addcontentsline{toc}{section}{Appendices}
     }
     
     %\lstset{language=C++,
@@ -54,18 +54,18 @@
     \definecolor{commentcolor}{rgb}{0,0.3,0}
     
     \lstset{
-    	language=C++,
-    	basicstyle=\footnotesize\ttfamily,
-    	numbers=left,
-    	%numberstyle=\tiny,
-    	frame=tb,
-    	columns=fullflexible,
-    	showstringspaces=false,
-    	breaklines=true,
-    	tabsize=4,
-    	keywordstyle=\color{keywordcolor}\footnotesize\bf\ttfamily,
-    	stringstyle=\color{stringcolor}\footnotesize\ttfamily,
-    	commentstyle=\color{commentcolor}\it\sffamily
+        language=C++,
+        basicstyle=\footnotesize\ttfamily,
+        numbers=left,
+        %numberstyle=\tiny,
+        frame=tb,
+        columns=fullflexible,
+        showstringspaces=false,
+        breaklines=true,
+        tabsize=4,
+        keywordstyle=\color{keywordcolor}\footnotesize\bf\ttfamily,
+        stringstyle=\color{stringcolor}\footnotesize\ttfamily,
+        commentstyle=\color{commentcolor}\it\sffamily
     }
     % \lstset{basicstyle=\ttfamily,breaklines=true}
     \lstloadlanguages{C++}
@@ -89,12 +89,12 @@
     \rfoot{}
     
     \geometry{
-    	top=0.9in,
-    	inner=0.7in,
-    	outer=0.7in,
-    	bottom=0.9in,
-    	headheight=2ex,
-    	headsep=1ex,
+        top=0.9in,
+        inner=0.7in,
+        outer=0.7in,
+        bottom=0.9in,
+        headheight=2ex,
+        headsep=1ex,
     }
     \pagestyle{fancy}
     %\fancyhf{}
@@ -103,24 +103,24 @@
     
     \fancypagestyle{firststyle}
     {
-    	\chead{}
-    	\setlength{\headsep}{0.0in}
+        \chead{}
+        \setlength{\headsep}{0.0in}
     }
     \hypersetup{
-    	unicode=true,
-    	colorlinks=true,
-    	linkcolor=blue,
-    	citecolor=black,
-    	filecolor=black,
-    	urlcolor=blue
+        unicode=true,
+        colorlinks=true,
+        linkcolor=blue,
+        citecolor=black,
+        filecolor=black,
+        urlcolor=blue
     }
     
     \begingroup
     \makeatletter
     \@for\theoremstyle:=definition,remark,plain\do{%
-    	\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
-    		\addtolength\thm@preskip\parskip
-    	}%
+        \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+            \addtolength\thm@preskip\parskip
+        }%
     }
     \endgroup
     
@@ -148,79 +148,79 @@
     
     \newcommand{\mytitle}
     {
-    	\textbf {
-    		inzva Algorithm Programme 2018-2019\\ \ \\
-    		Bundle 14 \\ \ \\ 
-    		Algorithms - 5\\ \ \\
-    	}
+        \textbf {
+            inzva Algorithm Programme 2018-2019\\ \ \\
+            Bundle 14 \\ \ \\ 
+            Algorithms - 5\\ \ \\
+        }
     }
     
     \title{\vspace{-2em}\mytitle\vspace{-0.3em}}
     
     \author{
-    	\textbf{Editor}\\
-    	Mehmet Altuner  \\ \ \\ 
-    	\textbf{Reviewer} \\ Osman Karaketir
+        \textbf{Editor}\\
+        Mehmet Altuner  \\ \ \\ 
+        \textbf{Reviewer} \\ Osman Karaketir
     }
     
     \date{}
     \begin{document}
-    	
-    	\begin{figure}
-    		\centering
-    		\includegraphics[width=\linewidth/4]{inzva-logo.png}
-    		\label{fig:inzva}
-    	\end{figure}
-    	\maketitle
-    	
-    	\cleardoublepage
-    	\tableofcontents
-    	\markboth{Table of Contents}{}
-    	\cleardoublepage
-    	
-    	\section{Hashing}
-    	We can find a unique integer representation for each string. This process is called Hashing. There are a lot of hashing functions, we look into one of them: Polynomial rolling hash. \\
-    	
-    	Hash of string s with length k + 1 is: $hash(s) = (s[0] * p^{(k)}+ s[1] * p ^ {(k-1)} + ... + s[k] * p^0) \pmod{b}$ \\
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\linewidth/4]{inzva-logo.png}
+            \label{fig:inzva}
+        \end{figure}
+        \maketitle
+        
+        \cleardoublepage
+        \tableofcontents
+        \markboth{Table of Contents}{}
+        \cleardoublepage
+        
+        \section{Hashing}
+        We can find a unique integer representation for each string. This process is called Hashing. There are a lot of hashing functions, we look into one of them: Polynomial rolling hash. \\
+        
+        Hash of string s with length k + 1 is: $hash(s) = (s[0] * p^{(k)}+ s[1] * p ^ {(k-1)} + ... + s[k] * p^0) \pmod{b}$ \\
     
         Choose $p$ as a prime number that is bigger than the size of the alphabet, choose $m$ as a large prime number to ensure that the hash value of the string is unique for that particular string.
         
         Popular $p$ and $m$ values are $p = 31$ and $m = 1e9 + 7$.
-    	
-    	\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+        
+        \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 long long int hash_func(string text){
-	int p = 271; // 
-	long long int result_hash = 0;
-	/*
-	a prime number that is bigger than the size of 
-	the alphabet. Alphabet size for char is 256.
-	*/
-	long long int m = 1e9 + 7; // a very large number
-	
-	long long int p_pow = 1;
-	
-	for(int i= text.size() - 1; i>=0; i--){
-		result_hash += (s[i]*p_pow) %m;
-		result_hash = result_hash %m
-		p_pow = p * p_pow;
-	}
+    int p = 271; // 
+    long long int result_hash = 0;
+    /*
+    a prime number that is bigger than the size of 
+    the alphabet. Alphabet size for char is 256.
+    */
+    long long int m = 1e9 + 7; // a very large number
+    
+    long long int p_pow = 1;
+    
+    for(int i= text.size() - 1; i>=0; i--){
+        result_hash += (s[i]*p_pow) %m;
+        result_hash = result_hash %m
+        p_pow = p * p_pow;
+    }
 
-	return result_hash;
+    return result_hash;
 }
         \end{minted}
-    	
-    	 We will make use Polynomial rolling hash in Rabin-Karp Algorithm for pattern finding.
-    	\newpage
-    	\section{String Matching Algorithms}
-    	
-    	\subsection{Basics}
-    	
+        
+         We will make use Polynomial rolling hash in Rabin-Karp Algorithm for pattern finding.
+        \newpage
+        \section{String Matching Algorithms}
+        
+        \subsection{Basics}
+        
         In string matching, our goal is to find a pattern in a given text. Sometimes we are asked only to find out if there is at least one matching substring or how many matching substring there are.
-    	
-    	\subsection{Naive Approach}
-    	In naive approach, we simply traverse through all possible substrings of length \texttt{m} of the given text of length \texttt{n}. We check each substring for whether it is matching with the given pattern or not. Therefore, our complexity is \texttt{O(m*n)}.
-    	
-    	\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+        
+        \subsection{Naive Approach}
+        In naive approach, we simply traverse through all possible substrings of length \texttt{m} of the given text of length \texttt{n}. We check each substring for whether it is matching with the given pattern or not. Therefore, our complexity is \texttt{O(m*n)}.
+        
+        \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 bool find(string pattern, string text){
     for(int i=0; i<text.size()-pattern.size(); i++){
         for(int j=0; j<pattern.size(); j++){
@@ -275,24 +275,24 @@ bool find(string pattern, string text){
         \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 vector <int> prefix_array;
 void calculatePrefixArray(string pattern){
-	int len = 0; // length of the current proper prefix
-	int i = 1;   // pointer that traverse on pattern 
-	prefix_array.resize(pattern.size());
-	prefix_array[0] = 0;
-	
-	while(i < pattern.size()){
-		if(pattern[i] == pattern[len]){
-			prefix_array[i] = ++len;
-			i++;
-		}else{
-			if(len != 0){ // if i had a proper prefix before
-				len = prefix_array[len-1];
-			}else{
-				prefix_array[i] = 0;
-				i++;
-			}
-		}
-	}
+    int len = 0; // length of the current proper prefix
+    int i = 1;   // pointer that traverse on pattern 
+    prefix_array.resize(pattern.size());
+    prefix_array[0] = 0;
+    
+    while(i < pattern.size()){
+        if(pattern[i] == pattern[len]){
+            prefix_array[i] = ++len;
+            i++;
+        }else{
+            if(len != 0){ // if i had a proper prefix before
+                len = prefix_array[len-1];
+            }else{
+                prefix_array[i] = 0;
+                i++;
+            }
+        }
+    }
 }
         \end{minted}
         
@@ -306,32 +306,32 @@ void calculatePrefixArray(string pattern){
         \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 bool KMP(string text, string pattern){
     calculatePrefixArray(pattern);
-	int i = 0; // pointer to traverse on text
-	int j = 0; // pointer to traverse on pattern
+    int i = 0; // pointer to traverse on text
+    int j = 0; // pointer to traverse on pattern
 
-	while(i < text.size()){
-		if(j==pattern.size()) return true;
+    while(i < text.size()){
+        if(j==pattern.size()) return true;
 
-		if(text[i] == pattern[j]){
-			i++;
-			j++;
-		}else{
-			if(j != 0){
-				/*
-				if i had a matching sequence lately
-				do not go to the beginning
-				go to the beginning of the proper prefix
-				and do not increment i
-				*/ 
-				j = prefix_array[j-1];
-			}else{
-				// increment i
-				i++;
-			}
-		}
-	}
+        if(text[i] == pattern[j]){
+            i++;
+            j++;
+        }else{
+            if(j != 0){
+                /*
+                if i had a matching sequence lately
+                do not go to the beginning
+                go to the beginning of the proper prefix
+                and do not increment i
+                */ 
+                j = prefix_array[j-1];
+            }else{
+                // increment i
+                i++;
+            }
+        }
+    }
 
-	return j == pattern.size();
+    return j == pattern.size();
 }
         \end{minted}
         
@@ -351,44 +351,44 @@ bool KMP(string text, string pattern){
 int state_table[N+1][M];
 // N=length of the input, M=size of the alphabet
 void create_state_table(string pattern, string alphabet){
-	string pat = "";
-	for(int i=0; i<pattern.size()+1; i++){
-		for(int j=0; j<alphabet.size(); j++){
-			string tmp = pat;
-			pat += alphabet[j];
-			//cerr << pat << endl;
-			int new_state=0, pattern_ptr=0;
+    string pat = "";
+    for(int i=0; i<pattern.size()+1; i++){
+        for(int j=0; j<alphabet.size(); j++){
+            string tmp = pat;
+            pat += alphabet[j];
+            //cerr << pat << endl;
+            int new_state=0, pattern_ptr=0;
 
-			prefix_array.clear();
-			calculatePrefixArray(pattern + '#' + pat);
+            prefix_array.clear();
+            calculatePrefixArray(pattern + '#' + pat);
 
-			new_state = prefix_array[pattern.size() + i + 1];
-			
-			state_table[i][j] = new_state;
-			pat = tmp;
-		}
-		if(i < pattern.size()) pat += pattern[i];
-	}
+            new_state = prefix_array[pattern.size() + i + 1];
+            
+            state_table[i][j] = new_state;
+            pat = tmp;
+        }
+        if(i < pattern.size()) pat += pattern[i];
+    }
 }
         \end{minted}
-    	
-    	Time complexity for building the state table is \texttt{O(n*m)} (n is the size of the pattern and m is the size of the alphabet).
-    	
+        
+        Time complexity for building the state table is \texttt{O(n*m)} (n is the size of the pattern and m is the size of the alphabet).
+        
         \newpage
         
-    	While searching for the pattern in the text, we simply follow our state table. If we reach the last state, it means we have found the pattern.
-    	
-    	\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+        While searching for the pattern in the text, we simply follow our state table. If we reach the last state, it means we have found the pattern.
+        
+        \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 bool finite_automata(string pattern, string text, string alphabet){
-	create_state_table(pattern, alphabet);
-	int current_state = 0;
-	int last_state = pattern.size();
-	
-	for(int i=0; i<text.size(); i++){
-		current_state = state_table[current_state][s[i]];
-		if(current_state == last_state) return true;
-	}
-	return false;
+    create_state_table(pattern, alphabet);
+    int current_state = 0;
+    int last_state = pattern.size();
+    
+    for(int i=0; i<text.size(); i++){
+        current_state = state_table[current_state][s[i]];
+        if(current_state == last_state) return true;
+    }
+    return false;
 }
 }
         \end{minted}
@@ -419,25 +419,25 @@ bool is_same(string& a, string& b){
         \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 bool rabin_karp(string& text, string& pattern){
 
-	int m = text.size();
-	int n = pattern.size();
-	int p = 271; //same p using in hash_func
-	long long int mod = 1e9 + 7 //same mod using in hash_func
-	long long int hash_substring, hash_pattern;
-	hash_substring = hash_func(string(text.begin(), text.begin() + n));
-	hash_pattern = hash_func(pattern);
+    int m = text.size();
+    int n = pattern.size();
+    int p = 271; //same p using in hash_func
+    long long int mod = 1e9 + 7 //same mod using in hash_func
+    long long int hash_substring, hash_pattern;
+    hash_substring = hash_func(string(text.begin(), text.begin() + n));
+    hash_pattern = hash_func(pattern);
 
-	if(hash_substring == hash_pattern)
-		return true;
+    if(hash_substring == hash_pattern)
+        return true;
 
-	for(int i = n; i<m; i++){
-		hash_substring = 
-		    ((hash_substring - (text[i - n] * p^(n-1)))*p + text[i] * p^0) % mod;
-		if(hash_substring == hash_pattern)
-			return true;
-	}
+    for(int i = n; i<m; i++){
+        hash_substring = 
+            ((hash_substring - (text[i - n] * p^(n-1)))*p + text[i] * p^0) % mod;
+        if(hash_substring == hash_pattern)
+            return true;
+    }
 
-	return false;
+    return false;
 }
     \end{minted}
         
@@ -542,13 +542,13 @@ void search(char *pat, char *txt, int *suffArr, int n)
     
     \newpage
     
-    	\subsection{LCP Array}
-    	LCP means longest common prefix. \texttt{LCP[i]} holds the length of the longest common prefix of \texttt{suffArr[i]} and \texttt{suffArr[i+1]}.
-    	
-    	\includegraphics[width=\linewidth/1]{lcp.png}
-    	
-    	There are many ways to construct a LCP Array but we are going to discuss the one that uses precalculated suffix array (Kasai's Algorithm).
-    	
+        \subsection{LCP Array}
+        LCP means longest common prefix. \texttt{LCP[i]} holds the length of the longest common prefix of \texttt{suffArr[i]} and \texttt{suffArr[i+1]}.
+        
+        \includegraphics[width=\linewidth/1]{lcp.png}
+        
+        There are many ways to construct a LCP Array but we are going to discuss the one that uses precalculated suffix array (Kasai's Algorithm).
+        
 \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 int lcp(int x, int y){
     // lcp's of substring s[x..n] and s[y..n]
@@ -556,9 +556,9 @@ int lcp(int x, int y){
     for(int i=logn; i>=0; i--){
         if(P[i][x] == P[i][y]){
             res += pow(2, i);
+            x += pow(2, i);
+            y += pow(2, i);
         }
-        x += pow(2, i);
-        y += pow(2, i);
         // move to the next characters
     }
     return res;
@@ -566,30 +566,30 @@ int lcp(int x, int y){
 \end{minted}
 
     The algorithm above has a complexity of $O(log(n))$ and should be called for each suffix so its total complexity is $O(n*log(n))$.
-    	
+        
        \newpage
-	   \section{References}
-    	
-    	\begin{thebibliography}{0}
-    		
-    		\bibitem{sa}
-    		https://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/
-    		\bibitem{pf}
-    		https://cp-algorithms.com/string/prefix-function.html
-    		\bibitem{gfg}
-    		https://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/
-    		\bibitem{cp}
-    		https://cp-algorithms.com/string/string-hashing.html
-    		\bibitem{kasai}
-    		https://www.geeksforgeeks.org/kasais-algorithm-for-construction-of-lcp-array-from-suffix-array/
-    		\bibitem{fa}
-    		https://www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
-    		\bibitem{rk}
-    		https://cp-algorithms.com/string/rabin-karp.html
-    		\bibitem{birth}
-    		https://en.wikipedia.org/wiki/Birthday_paradox
-    		\bibitem{rabin}
-    		https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
-    	\end{thebibliography}
+       \section{References}
+        
+        \begin{thebibliography}{0}
+            
+            \bibitem{sa}
+            https://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/
+            \bibitem{pf}
+            https://cp-algorithms.com/string/prefix-function.html
+            \bibitem{gfg}
+            https://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/
+            \bibitem{cp}
+            https://cp-algorithms.com/string/string-hashing.html
+            \bibitem{kasai}
+            https://www.geeksforgeeks.org/kasais-algorithm-for-construction-of-lcp-array-from-suffix-array/
+            \bibitem{fa}
+            https://www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
+            \bibitem{rk}
+            https://cp-algorithms.com/string/rabin-karp.html
+            \bibitem{birth}
+            https://en.wikipedia.org/wiki/Birthday\_paradox
+            \bibitem{rabin}
+            https://en.wikipedia.org/wiki/Rabin-Karp\_algorithm
+        \end{thebibliography}
     
     \end{document}
