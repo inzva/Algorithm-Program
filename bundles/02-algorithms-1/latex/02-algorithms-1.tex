@@ -436,8 +436,16 @@ void quickSort(int *ar, int size){
 void radixSort(int *ar, int size, int base=10){
     int *temp = new int [size];
     int *count = new int [base]();
+
+    //Find the maximum value.
+    int maxx = ar[0];
+    for(int i=1; i<size; i++){
+        if(ar[i]>maxx){
+            maxx=ar[i];
+        }
+    }
 	
-    for (int e=1; count[0] != size; e *= base){
+    for (int e=1; maxx/e > 0; e *= base){
         memset(count, 0, sizeof(int) * base);
 		
         for (int i=0; i < size; i++)
@@ -445,9 +453,6 @@ void radixSort(int *ar, int size, int base=10){
 		
         for (int i=1; i < base; i++)
             count[i] += count[i-1];
-		
-        if (count[0] == size)
-            break;
 		
         for (int i=size-1; 0 <= i; i--)
             temp[--count[(ar[i]/e) % base]] = ar[i];
@@ -545,4 +550,5 @@ Some example algorithms that use divide and conquer technique:
 
 
 \end{document}
+
 
