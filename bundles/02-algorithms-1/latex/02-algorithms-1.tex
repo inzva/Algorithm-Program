@@ -286,7 +286,12 @@ In this document, we will implement the first type of unimodal function, and the
 	T(N) &=& O(logN)
 \end{eqnarray*}
 
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\linewidth]{ternary_search}
+	\caption{Example for ternary search}
+	\label{fig:ternary_search}
+\end{figure}
 
 \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 
@@ -373,8 +378,7 @@ void mergeSort(int *ar, int size){
 \end{minted}
 
 \cleardoublepage
-
-		\subsection{Quick Sort}
+    \subsection{Quick Sort}
 		
 \textit{Quick Sort} is also a \textit{Divide and Conquer} algorithm. The algorithm chooses an element from the array as a pivot and partitions the array around it. Partitioning is arranging the array that satisfies those: the pivot should be put to its correct place, all smaller values should be placed before the pivot, and all greater values should be placed after the pivot. The partitioning can be done in linear time, and after the partitioning, we can use the same sorting function to solve the left part of the pivot and the right part of the pivot recursively. \\ \\
 If the sellected pivot cannot divide the array uniformly after the partitioning, the time complexity can reach $O(n ^ 2)$ like insertion sort. To avoid this, the pivot can generally be picked randomly.
@@ -412,10 +416,11 @@ void quickSort(int *ar, int size){
 }
 \end{minted}
 
+
 \cleardoublepage
 		\subsection{Radix Sort}
 
-	\textit{Quick Sort} and \textit{Merge Sort} are comparison-based sorting algorithms and cannot run better than $O(log N)$. However, \textit{Radix Sort} works in linear time ($O(N + K)$, where $K$ is $log(max(ar))$)).
+	\textit{Quick Sort} and \textit{Merge Sort} are comparison-based sorting algorithms and cannot run better than $O(Nlog N)$. However, \textit{Radix Sort} works in linear time ($O(N + K)$, where $K$ is $log(max(ar))$)).
 
 \textbf{Procedure: }
 \begin{enumerate}
@@ -431,8 +436,16 @@ void quickSort(int *ar, int size){
 void radixSort(int *ar, int size, int base=10){
     int *temp = new int [size];
     int *count = new int [base]();
+
+    //Find the maximum value.
+    int maxx = ar[0];
+    for(int i=1; i<size; i++){
+        if(ar[i]>maxx){
+            maxx=ar[i];
+        }
+    }
 	
-    for (int e=1; count[0] != size; e *= base){
+    for (int e=1; maxx/e > 0; e *= base){
         memset(count, 0, sizeof(int) * base);
 		
         for (int i=0; i < size; i++)
@@ -440,9 +453,6 @@ void radixSort(int *ar, int size, int base=10){
 		
         for (int i=1; i < base; i++)
             count[i] += count[i-1];
-		
-        if (count[0] == size)
-            break;
 		
         for (int i=size-1; 0 <= i; i--)
             temp[--count[(ar[i]/e) % base]] = ar[i];
@@ -453,6 +463,67 @@ void radixSort(int *ar, int size, int base=10){
 	
     delete [] temp;
     delete [] count;
+}
+\end{minted}
+
+
+\cleardoublepage
+    \section{Quickselect Algorithm}
+	
+	\textit{Quickselect} is a selection algorithm that \textit{finds the k-th smallest element in an unordered list}. The algorithm is closely related to QuickSort in partitioning stage; however, instead of recurring for both sides, it recurs only for the part that contains the k-th smallest element.
+
+\textbf{Procedure: }
+\begin{enumerate}
+	\item Choose a pivot randomly,
+	\item For all values in the array, collect smaller values in the left of the array and greater values in the right of the array,
+	\item Move the pivot to the correct place,
+	\item If the current position is equal to k, return the value at the position.
+	\item If the current position is more than k, repeat the same algorithm for the left partition.
+	\item Else, update k and repeat the same algorithm for the right partition.
+\end{enumerate}	
+
+\textbf{Complexity: }
+
+	In average -> O(N)  |  Worst-case -> O($N^{2}$)
+
+    Note that this algorithm is fast in practice, but has poor worst-case performance, like quicksort. However, it still performs better on average than other algorithms that find the k-th smallest element in O(n) in the worst case.
+
+
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+// This function finds the k-th smallest element in arr within size si.
+int QuickSelect(int *arr, int si, int k) {
+    // Check if k is valid and if arr has no less elements than k.
+    if (0 < k && k <= si) {
+    //The quicksort-like partitioning. It is same until we find the index of the pivot.
+        int ind = 0;
+        
+        //Get a random pivot to decrease the chance of getting worst-case scenario.
+        swap(arr[si-1], arr[rand() % si]);
+        for (int j = 0; j < si-1; j++) {
+            if (arr[j] <= arr[si-1]) {
+                swap(arr[j], arr[ind]);
+                ind++;
+            }
+        }
+        swap(arr[si-1], arr[ind]);
+        
+        
+        //Now check and recur to appropriate situation.
+        //If the index is equal with k-1 (as our array is 0-indexed) return the value.
+        if (ind == k - 1) {
+            return arr[ind];
+        }
+        //Else check if index is greater than k-1. If it is, recur to the left part.
+        else if (ind > k - 1) {
+            return QuickSelect(arr, ind, k);
+        }
+        //Else, recur to the right part.
+        else {
+            return QuickSelect(arr + ind + 1, si - ind - 1, k - ind - 1);
+        }
+    }
+    // If invalid values is given
+    return INT_MAX;  
 }
 \end{minted}
 
@@ -479,3 +550,5 @@ Some example algorithms that use divide and conquer technique:
 
 
 \end{document}
+
+
