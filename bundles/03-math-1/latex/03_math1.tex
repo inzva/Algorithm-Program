@@ -44,7 +44,7 @@
 
 \newcommand{\mytitle}{\textbf{inzva Algorithm Programme 2018-2019\\ \ \\Bundle 3 \\ \ \\ Math 1}}
 \title{\vspace{-2em}\mytitle\vspace{-0.3em}}
-\author{\textbf{Editor}\\Sadık Ekin Özbay \\ \ \\ \textbf{Reviewers} \\Yusuf Hakan Kalaycı \\ Burak Buğrul \\ Kadır Emre Oto }
+\author{\textbf{Editor}\\Sadık Ekin Özbay \\ \ \\ \textbf{Reviewers} \\Yusuf Hakan Kalaycı \\ Burak Buğrul \\ Kadır Emre Oto \\ \ \\ \textbf{Contributors} \\ Ömer Talip Akalın}
 
 
 
@@ -169,7 +169,6 @@ commentstyle=\color{commentcolor}\it\sffamily
 \cleardoublepage
 
 \section{Introduction}
-
 Next section is about the \texttt{Number Theory}. It will be quite a generous introduction to the questions that are related to Mathematics.  
 
 Mathematics is quite essential to the programmers that want to improve themselves in the topic of competitive programming. We are going to use these topics from graph theory to the subject of strings.  Therefore, a strong understanding of mathematics is fundamental.
@@ -1498,6 +1497,109 @@ So far so good, we have a general matrix equation for the finding Nth Fibonacci 
 The latter formula gives us the find the matrix that has Nth Fibonacci number. Since we are finding our matrix Exponentiation in $\log{n}$ processes, we would get the time complexity of O($\log{n}$).
 \clearpage
 
+\section{Meet in the Middle}
+Meet in the middle - sometimes called split and merge - is a technique which uses caching to find efficient solutions on specific problems. Now, let's consider the following example.
+
+Problem : Given an array of integers and a number, find the number of subsets of sum equal to given number.
+
+\subsection{Naive Approach }
+\texttt{Time Complexity: O($n*2^n$) } \\ \\
+In the naive approach, we simply look at all subsets.
+
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+#include <iostream>
+#include <time.h>
+using namespace std;
+#define mod 1000000007
+
+int main() {
+    int n, x;
+    scanf("%d %d", &n, &x);
+    int a[n+1];
+    
+    for(int i=1;i<=n;i++){
+        scanf("%d", &a[i));
+    }
+    
+    int res=0;
+    for(int i=1;i<=(1<<n);i++){
+        int temp=0;
+        for(int j=1;j<=n;j++){
+            if(i & (1<<j)){
+                temp+=a[j];
+            }
+        }
+        if(temp==x){
+            res++;
+        }
+    }
+    
+    // Calculate the runtime of the function.
+    clock_t tStart = clock();
+
+    printf("Time taken: %.6fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    printf("%lld\n", res);
+    return 0;
+}
+\end{minted}
+\clearpage
+
+
+\subsection{Meet in the Middle }
+\texttt{Time Complexity: O($n*2^{n/2}*log(n)$) } \\ \\
+In this approach, we divide the array into two parts, $A$ and $B$. After that, we calculate the sums of all subsets in $A$ and $B$. Then, we iterate through the subset sums of $A$, which is enough for the desired result.
+
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n, x;  scanf("%d %d", &n, &x);    int a[n];
+    for(int i=0;n>i;i++){
+        scanf("%d", &a[i]);
+    }
+
+    map<int, int> map_a, map_b;    
+    int i=0;
+
+    for(;i<(1<<(n/2));i++){
+        int temp=0;
+        for(int j=0;(n/2)>j;j++){
+            if(i & (1<<j)){
+                temp+=a[j];
+            }
+        }
+        map_a[temp]++;
+    }
+
+    for(;i<(1<<n);i++){
+        int temp=0;
+        for(int j=(n/2);n>j;j++){
+            if(i & (1<<j)){
+                temp+=a[j];
+            }
+        }
+        map_b[temp]++;
+    }
+
+    int res=0;
+
+    for(auto it=map_a.begin();it!=map_a.end();it++){
+        if(map_b[x - (it->first)]){
+            res++;
+        }
+    }
+      
+    // Calculate the runtime of the function.
+    clock_t tStart = clock();
+    
+    printf("Time taken: %.6fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    printf("%d\n", res);  
+    
+    return 0;
+}
+\end{minted}
+\clearpage
 
 \begin{thebibliography}{9}
 \bibitem{numbertheory} 
