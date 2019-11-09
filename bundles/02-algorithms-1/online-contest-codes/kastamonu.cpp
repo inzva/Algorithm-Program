@@ -76,7 +76,7 @@ int main(){
 	}
 	
 	if(r==1e18) cout << -1 << endl , 0 ;
-	else cout << setprecision(10) << fixed << r << endl;
+	else cout << setprecision(10) << fixed << r << endl; // There is an error in this line. please check it out.	
 	
 	return 0;
 }
