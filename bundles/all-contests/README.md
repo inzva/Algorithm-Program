@@ -1,3 +1,7 @@
+
+# inzva Contest List
+
+
 <details>
 <summary> <b> Algorithm Program 2019-2020 </b> </summary>
 
@@ -21,3 +25,17 @@
 | [Strings](http://www.hackerrank.com/inzva-algorithm-programme-2019-2020-strings-lab-14) | KMP, Robin Karp, Trie|
 
 </details>
+
+<details>
+<summary> <b> Winter Camp 2020 - Foundation </b> </summary>
+  
+  | Name | Topic |
+|------|-------|
+| [Day #1](http://www.hackerrank.com/inzva-winter-camp-2020-day-1) | Sieve of Eratosthenes, Brute-Force, Enumeration, Binary Search, Ternary Search|
+| [Day #2](http://www.hackerrank.com/inzva-winter-camp-2020-day-2) | DFS, BFS|
+| [Day #3](http://www.hackerrank.com/inzva-winter-camp-2020-day-3) | Priority Queue, Shortest Path, MST|
+| [Day #4](http://www.hackerrank.com/inzva-winter-camp-2020-day-4) | Coin Problem, LIS, Knapsack Problems, LCS|
+| [Final](http://www.hackerrank.com/inzva-winter-camp-2020-foundation-final) | All of the Above |
+  
+</details>
+
