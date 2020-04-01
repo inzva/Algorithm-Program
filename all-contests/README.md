@@ -43,7 +43,7 @@
 
 
 <details>
-<summary> <b> Algorithm Program 2019-2020 </b> </summary>
+<summary> <b> Algorithm Competition League #1 </b> </summary>
 
 | Name | Topic |
 |------|-------|
