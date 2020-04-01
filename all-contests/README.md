@@ -39,3 +39,23 @@
   
 </details>
 
+
+
+
+<details>
+<summary> <b> Algorithm Program 2019-2020 </b> </summary>
+
+| Name | Topic |
+|------|-------|
+| [Contest #1](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-1) | No Specific Topic|
+| [Contest #2](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-2) | No Specific Topic|
+| [Contest #3](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-3) | No Specific Topic|
+| [Contest #4](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-4) | No Specific Topic|
+| [Contest #5](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-5) | No Specific Topic|
+| [Contest #6](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-6) | No Specific Topic|
+| [Contest #7](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-7) | No Specific Topic|
+| [Contest #8](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-8) | No Specific Topic|
+| [Contest #9](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-9) | No Specific Topic|
+| [Contest #10](https://www.hackerrank.com/inzva-algorithm-competition-league-contest-10) | No Specific Topic|
+</details>
+
