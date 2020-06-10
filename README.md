@@ -1,4 +1,4 @@
-# Algorithm-Competition-Programme
+# Algorithm-Competition-Program
 
 The **30-week** Algorithm Competition Programme 2018-2019, divided into Fall and Spring semesters, will include lectures, contests, problem-solvings and a variety of practises every saturday.
 
