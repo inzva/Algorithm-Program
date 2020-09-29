@@ -14,11 +14,9 @@ Our documents/codes came from different folks and pull requests are the best way
 5. We'll assign a reviewer for the PR and you can discuss the changes afterwards.
 6. Congratulations! Your PR has been merged.
 
-## License
-<TODO>
-
 ## Report bugs/errors using Github's [issues](https://github.com/inzva/Algorithm-Program/issues)
 We use GitHub issues to track bugs/errors. Report a bug by opening a new issue. Please, don't forget to state the issue well. Don't just open the issue with a title. And don't hesitate to propose a fix. Again, we'd love to have your contribution.
+
 ## License
 By contributing, you agree that your contributions will be licensed under its MIT License.
 
