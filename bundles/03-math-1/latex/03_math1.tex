@@ -967,7 +967,7 @@ using namespace std;
 
 // Recursive version of the factorial finding algorithm.
 long long facRec(long long n){
-    if(n == 1)
+    if(n == 1 || n == 0)
         return 1;
     return ( (n%mod) * (facRec(n-1)%mod) ) % mod ;
 }
@@ -1152,7 +1152,7 @@ Combination is selecting items from a set. The order of selected sets does not m
 using namespace std;
 
 long long fac(long long n){
-    if(n == 1) return 1;
+    if(n == 1 || n == 0) return 1;
     return n*fac(n-1);
 }
 
@@ -1191,7 +1191,7 @@ We will get the benefit from the following rules for the implementation of this 
 
 \[\binom n0 = \frac{n!}{0! \cdot (n-0)!} = 1 \quad \binom nn = \frac{n!}{n! \cdot (n-n)!} = 1\]
 
-\[\binom n0 = \frac{n!}{1! \cdot (n-1)!} = n \quad \binom n{n-1} = \frac{n!}{(n-1)! \cdot (n-(n-1))!} = n\]
+\[\binom n1 = \frac{n!}{1! \cdot (n-1)!} = n \quad \binom n{n-1} = \frac{n!}{(n-1)! \cdot (n-(n-1))!} = n\]
 
 \[\binom {n+1}{r+1} = \binom {n}{r+1} + \binom {n}{r}\]
 Let's prove the latter formula,
@@ -1366,7 +1366,7 @@ int main() {
     // Calculate the runtime of the function.
     clock_t tStart = clock();
     
-    long long res = expon(n, k);
+    long long res = fastExp(n, k);
     printf("Time taken: %.6fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
     printf("%lld\n", res);
     
