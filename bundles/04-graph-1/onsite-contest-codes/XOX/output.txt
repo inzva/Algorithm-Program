@@ -1,3 +1,0 @@
-X wins: 23
-O wins: 32
-Draw: 12
