@@ -2,21 +2,21 @@
 
 inzva Algorithm Program includes lectures, contests, problem-solving sessions and a variety of practices every Saturday, aimed at teaching advanced knowledge of algorithms to university students, spreading algorithmic thinking and providing training which will help them in international contests as well as in their professional lives.
  
-We prepared this full-fledged program to last all year in order to grow the algorithm community in its technical capacity and ready the students for international contests.
+We prepared this full-fledged program to last 15 weeks in order to grow the algorithm community in its technical capacity and ready the students for international contests.
 
-The participants are expected to not only have the skills, but also the enthusiasm and motivation for this unique program, which will be completely free of charge. The program will involve experienced editors to lecture the attendees, problem setters to prepare problems every week and reviewers to check their technical accuracy. A minimum of %70 attendance, which will be evaluated by considering your presence in lectures and your regular participation in the weekly contests, is required for a participant to receive certificate of graduation. 
+The participants are expected to not only have the skills, but also the enthusiasm and motivation for this unique program, which will be completely free of charge. The program will involve experienced editors to lecture the attendees, problem setters to prepare problems every week and reviewers to check their technical accuracy. The minimum required attendance is 60% for the current program, which will be evaluated by considering your presence in lectures and your regular participation in the weekly contests, is required for a participant to receive certificate of graduation. 
 
 Aside from meeting online every Saturday, we will keep in touch via the discord channel of the community.
 
 
 **DATE & LOCATION**
 
-Every Saturday. Every batch has a different date, we will be publishing the exact dates at [inzva.com](inzva.com) before every program.
+Regular meetings occurs in Saturdays. Every batch has a different date, we will be publishing the exact dates at [inzva.com](inzva.com) before every program.
 
 
 **MOTIVATION**
 
-We believe that the main benefit comes from the opportunity to practice with challenging problems. Here are some other benefits we think the participants will acquire from the program: 
+We believe that the main benefit comes from the opportunity to practice with challenging problems and taking a new step into the world of algorithms. Here are some other benefits we think the participants will acquire from the program: 
 
 - Receiving knowledge and personal experience from successful students in the community and getting one-on-one mentorship
 - Motivating yourself to improve your knowledge on a subject
@@ -38,9 +38,9 @@ The top three students will get prizes on the final contest day at the end of th
 
 See the FAQ [here.](https://inzva.com/faq-algorithm-competition-programme)
 
-**HOW TO BE AN EDITOR/PROBLEM SETTER/REVIEWER**
+**HOW TO BE AN EDITOR/PROBLEM SETTER**
 
-If you want to support the community as an **Editor, Problem Setter or Reviewer**, and get scholarship for your work by [BEV Foundation](https://bev.foundation/), you can sen an e-mail to contact@inzva.com.
+If you want to support the community as an **Editor or Problem Setter**, and get scholarship for your work by [BEV Foundation](https://bev.foundation/), you can sen an e-mail to contact@inzva.com.
 
 **BUNDLES** 
 
