@@ -1,67 +1,46 @@
-# Algorithm-Competition-Program
+# Algorithm Program
 
-The **30-week** Algorithm Competition Programme 2018-2019, divided into Fall and Spring semesters, will include lectures, contests, problem-solvings and a variety of practises every saturday.
+inzva Algorithm Program includes lectures, contests, problem-solving sessions and a variety of practices every Saturday, aimed at teaching advanced knowledge of algorithms to university students, spreading algorithmic thinking and providing training which will help them in international contests as well as in their professional lives.
+ 
+We prepared this full-fledged program to last weeks in order to grow the algorithm community in its technical capacity and ready the students for international contests.
 
-After our National Fall, Winter and Summer Camps, we prepared this full-fledged programme to last all year in order to grow the algorithm community in it’s technical capacity and ready the students for international contests.
+The participants are expected to not only have the skills, but also the enthusiasm and motivation for this unique program, which will be completely free of charge. The program will involve experienced editors to lecture the attendees, problem setters to prepare problems every week and reviewers to check their technical accuracy. The minimum required attendance is 60% for the current program, which will be evaluated by considering your presence in lectures and your regular participation in the weekly contests, is required for a participant to receive certificate of graduation. 
 
-The participants are expected to not only have the skills, but also the enthusiasm and motivation for this unique event, which will be completely free of charge.The programme will involve experienced editors to lecture the attendees, problem setters to prepare problems every week and reviewers to check their technical accuracy. **There will be a minimum requirement of %80 for attendance.**
+Aside from meeting online every Saturday, we will keep in touch via the discord channel of the community.
 
-Following the successful competitive programming communities in Romania, Bulgaria, Russia, Philippines and more, we strive to be a community that is eager to learn; where every member helps the other and the learners can also teach with the experienced.
-
-Aside from meeting at inzva every saturday, we will keep in touch via the discord channel of the community.
 
 **DATE & LOCATION**
 
-Every Saturday, total of 30 days spread over 30 weeks.
+Regular meetings occurs in Saturdays. Every batch has a different date, we will be publishing the exact dates at [inzva.com](inzva.com) before every program.
 
-Week 1: September 29 Saturday
-/ Week 30: May 25 Saturday/ inzva - Beykoz Kundura
 
 **MOTIVATION**
 
-We believe that the main benefit comes from the opportunity to practice with challenging problems. Here are some other benefits we think the participants will acquire from the camp: 
+We believe that the main benefit comes from the opportunity to practice with challenging problems and taking a new step into the world of algorithms. Here are some other benefits we think the participants will acquire from the program: 
 
+- Receiving knowledge and personal experience from successful students in the community and getting one-on-one mentorship
 - Motivating yourself to improve your knowledge on a subject
 - Assessing yourself
 - Coding more efficient
 - Advanced knowledge of data structures and algorithms
 - Learning teamwork and critical thinking
 - Getting to know ICPC World better 
-- Technical adequacy and preparation for interviews
-- The chance to be broadcasted as an Editor/Problem Setter/Reviewer or Attendee on inzva’s page.
-
-Those with %80+ attendance will have a certificate on Linkedin, GitHub and inzva.com as a graduate of this program, and those with proved success will be able to join our upcoming international summer camp directly.
+- Technical adequacy and preparation for job interviews
 
 **TECHNICAL PROFICIENCY**
 
 All participants are expected to know a programming language well. Attendees must prepare their own programming environment (computer, IDE, compiler etc.). The whole practice process will run on [HackerRank](https://www.hackerrank.com)
 
-You can find the curriculum [here](https://docs.google.com/spreadsheets/d/1f5r41dZ5-khcHL9ba_b2TNCLMg0QCqG-cEMdqlkwmGM/edit#gid=521339157)
 
-The top three students will get prizes on the final contest day at the end of the year-long program. We will also have various surprises for those who make it to the top of the leaderboards with weekly contests. Provided, it’s about learning, teaching and sharing; not winning.
+All participant who comply with 60% of the course and contests rules, will get a certificate and various surprizes during the program. Provided, it’s about learning, teaching and sharing; not winning.
 
 **FREQUENTLY ASKED QUESTIONS**
 
-See the FAQ [here.](https://inzva.com/faq-algorithm-competition-programme)
+Every batch has different rules, selecting criterias and application requirements , we will be publishing FAQ at [inzva.com](inzva.com) before every program.
 
-**HOW TO BE AN EDITOR/PROBLEM SETTER/REVIEWER**
+**HOW TO BE AN EDITOR/PROBLEM SETTER**
 
-If you want to support the community as an **Editor, Problem Setter or Reviewer**, and get scholarship for your work by [BEV Foundation](https://bev.foundation/), you can find more information and application form via the links below.
-
-**EDITOR**
-
-Prepares the content for the week and lecture at inzva physically. [Read more](https://inzva.com/faq-algorithm-competition-programme)
-
-**PROBLEM SETTER**
-
-Prepares two contests consisting of 5 and 10 questions according to the lectures prepared by the editor. [Read more](https://inzva.com/faq-algorithm-competition-programme)
-
-**REVIEWER**
-
-Reviews the content prepared by the editor and the problem setter, making sure it follows the guideline and curriculum. [Read
-more](https://inzva.com/faq-algorithm-competition-programme)
-
-We are proud to be founding a community together that will last years to come. With your support and contribution, we hope to be a sharing computer programming community for your generation and after.
+If you want to support the community as an Editor or Problem Setter, and get scholarship from BEV Foundation for your effort , please contact us by sending an email to [algorithm@inzva.com](mailto:algorithm@inzva.com) with the subject “Being an Editor or Problem Setter for Algorithm Program" .
 
 **BUNDLES** 
 
