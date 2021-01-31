@@ -2,7 +2,7 @@
 
 inzva Algorithm Program includes lectures, contests, problem-solving sessions and a variety of practices every Saturday, aimed at teaching advanced knowledge of algorithms to university students, spreading algorithmic thinking and providing training which will help them in international contests as well as in their professional lives.
  
-We prepared this full-fledged program to last 15 weeks in order to grow the algorithm community in its technical capacity and ready the students for international contests.
+We prepared this full-fledged program to last weeks in order to grow the algorithm community in its technical capacity and ready the students for international contests.
 
 The participants are expected to not only have the skills, but also the enthusiasm and motivation for this unique program, which will be completely free of charge. The program will involve experienced editors to lecture the attendees, problem setters to prepare problems every week and reviewers to check their technical accuracy. The minimum required attendance is 60% for the current program, which will be evaluated by considering your presence in lectures and your regular participation in the weekly contests, is required for a participant to receive certificate of graduation. 
 
@@ -32,15 +32,15 @@ We believe that the main benefit comes from the opportunity to practice with cha
 All participants are expected to know a programming language well. Attendees must prepare their own programming environment (computer, IDE, compiler etc.). The whole practice process will run on [HackerRank](https://www.hackerrank.com)
 
 
-The top three students will get prizes on the final contest day at the end of the program. We will also have various surprises for those who make it to the top of the leaderboards with weekly contests. Provided, it’s about learning, teaching and sharing; not winning.
+All participant who comply with 60% of the course and contests rules, will get a certificate and various surprizes during the program. Provided, it’s about learning, teaching and sharing; not winning.
 
 **FREQUENTLY ASKED QUESTIONS**
 
-See the FAQ [here.](https://inzva.com/faq-algorithm-competition-programme)
+Every batch has different rules, selecting criterias and application requirements , we will be publishing FAQ at [inzva.com](inzva.com) before every program.
 
 **HOW TO BE AN EDITOR/PROBLEM SETTER**
 
-If you want to support the community as an **Editor or Problem Setter**, and get scholarship for your work by [BEV Foundation](https://bev.foundation/), you can sen an e-mail to contact@inzva.com.
+If you want to support the community as an Editor or Problem Setter, and get scholarship from BEV Foundation for your effort , please contact us by sending an email to [algorithm@inzva.com](mailto:algorithm@inzva.com) with the subject “Being an Editor or Problem Setter for Algorithm Program" .
 
 **BUNDLES** 
 
