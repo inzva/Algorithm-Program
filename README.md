@@ -59,7 +59,7 @@ If you want to support the community as an Editor or Problem Setter, and get sch
 | [11-Graph-3](https://github.com/inzva/Algorithm-Program/tree/master/bundles/11-graph-3) |Bridges and Articulation Points, SCC, BCC, Max Flow|
 | [12-Math-3](https://github.com/inzva/Algorithm-Program/tree/master/bundles/12-math-3) |Vector Calculus, Area Calculation, Lines and Planes, Intersection, Convex Hull Problem, Rotating Calipers, Closest Pair Problem|
 | [13-graph-5](https://github.com/inzva/Algorithm-Program/tree/master/bundles/13-graph-5) |Segment Tree on a Tree, Heavy-Light Decomposition, Centroid Decomposition of a Tree, Subtrees' Set-Swap Technique|
-| [14-Algorithms-5](https://github.com/inzva/Algorithm-Program/tree/master/bundles/14-algorithms-5) |KMP, Robin-Karp Algorithm, Suffix Array, Longest Common Prefix Array|
+| [14-Algorithms-5](https://github.com/inzva/Algorithm-Program/tree/master/bundles/14-Algorithms-5) |KMP, Robin-Karp Algorithm, Suffix Array, Longest Common Prefix Array|
 
 
 
