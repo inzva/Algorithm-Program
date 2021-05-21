@@ -185,6 +185,7 @@ If you want to support the community as an Editor or Problem Setter, and get sch
   
   | Name | Topic |
 |------|-------|
+| [inzva Algorithm Competition Summer Camp 2019 Qualification](https://www.hackerrank.com/inzva-algorithm-competition-summer-camp-2019-qualification) | No Specific Topic|
 | [inzva ACSC 2019 Advanced #1](https://www.hackerrank.com/inzva-acsc-19-advanced-1) | No Specific Topic|
 | [inzva ACSC 2019 Advanced #2](https://www.hackerrank.com/inzva-acsc-19-advanced-2) | No Specific Topic|
 | [inzva ACSC 2019 Foundation Final](https://www.hackerrank.com/inzva-acsc-19-foundation-final) | No Specific Topic|
