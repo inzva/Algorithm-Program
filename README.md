@@ -144,11 +144,14 @@ If you want to support the community as an Editor or Problem Setter, and get sch
 | [inzva Algorithm Program 2018-2019 Graph-1 Onsite](https://www.hackerrank.com/inzva-04-graph-1-onsite-2018) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 DP-1 Online](https://www.hackerrank.com/inzva-05-dp-1-online-2018) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 DP-1 Onsite](https://www.hackerrank.com/inzva-05-dp-1-onsite-2018) | No Specific Topic|
+| [inzva Fall Term Contest 2018](https://www.hackerrank.com/inzva-first-term-2018) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Graph-2 Online](https://www.hackerrank.com/inzva-07-graph-2-online-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Graph-2 Onsite](https://www.hackerrank.com/inzva-07-graph-2-onsite-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Data Structures-2 Online](https://www.hackerrank.com/inzva-08-data-structures-2-online-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 DP-2 Online](https://www.hackerrank.com/inzva-10-dp-2-online-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Data Structures-2 Onsite](https://www.hackerrank.com/inzva-08-data-structures-2-onsite-2019) | No Specific Topic|
+| [inzva Algorithm Program 2018-2019 Data Structures-3 Online](https://www.hackerrank.com/contests/inzva-09-data-structures-3-online-2019/challenges) | No Specific Topic|
+| [inzva Algorithm Program 2018-2019 Data Structures-3 Onsite](https://www.hackerrank.com/contests/inzva-09-data-structures-3-onsite-2019/challenges) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Graph-3 Online](https://www.hackerrank.com/inzva-11-graph-3-online-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Graph-3 Onsite](https://www.hackerrank.com/inzva-11-graph-3-onsite-2019) | No Specific Topic|
 | [inzva Algorithm Program 2018-2019 Math-3 Online](https://www.hackerrank.com/inzva-12-math-3-online-2019) | No Specific Topic|  
