@@ -1356,7 +1356,7 @@ long long fastExp(long long n, long long k){
     // If k is odd return n * temp * temp
     // If k is even return temp * temp
     // Take mod, since we can have a large number that overflows from long long
-    if((k&1) == 1) return (n * temp * temp) % mod
+    if((k&1) == 1) return ((n * temp) % mod * temp) % mod;
     return (temp * temp) % mod;
 }
 int main() {
