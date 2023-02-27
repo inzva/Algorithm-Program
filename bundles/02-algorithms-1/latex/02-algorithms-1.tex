@@ -149,7 +149,7 @@
 \newcommand{\mytitle}
 {
 	\textbf {
-		inzva Algorithm Programme 2018-2019\\ \ \\
+		inzva Algorithm Program 2018-2019\\ \ \\
 		Bundle 2 \\ \ \\ 
 		Algorithms - 1 \\ \ \\
 	}
@@ -162,7 +162,9 @@
 	Kadir Emre Oto  \\ \ \\ 
 	\textbf{Reviewers} \\ 
 	Muhammed Burak Buğrul  \\
-	Tahsin Enes Kuru
+	Tahsin Enes Kuru \\ \ \\
+    \textbf{Contributors} \\ 
+	Aybala Karakaya  \\
 }
 
 \date{}
@@ -189,7 +191,8 @@ This visualization may help you understand how the search algorithms work: \href
 		\subsection{Linear Search}
 			
 Simplest search algorithm is \textit{linear search}, also know as \textit{sequential search}. In this technique, all elements in the collection of the data is checked one by one, if any element matches, algorithm returns the index; otherwise, it returns -1. \\ \\
-ity is $O(N)$
+\textbf{Complexity: }
+    $O(N)$
 
 \begin{figure}[h]
 	\centering
@@ -212,15 +215,15 @@ int linearSearch(int *array, int size, int key){
 	
 		\subsection{Binary Search}
 			
-We know linear search is quite a slow algorithm because it compares each element of the set with search key, and there is a high-speed searching technique for \textbf{sorted} data instead of linear search, which is \textbf{binary search}. After each comparison, the algorithm eliminates half of the data using the sorting property. 
+We know the linear search is quite a slow algorithm because it compares each element of the set with the search key, and there is a high-speed searching technique for \textbf{sorted} data instead of linear search, which is the \textbf{binary search}. After each comparison, the algorithm eliminates half of the data using the sorting property. 
 
 We can also use binary search on increasing functions in the same way. 
 
 \textbf{Procedure: }
 \begin{itemize}
 	\item Compare the key with the middle element of the array,
-	\item If it is a match, return the index of middle.
-	\item If the key is bigger than the middle, it means that the key must be in the right side of the middle. We can eliminate the left side.
+	\item If it is a match, return the index of the middle.
+	\item If the key is bigger than the middle, it means that the key must be on the right side of the middle. We can eliminate the left side.
 	\item If the key is smaller, it should be on the left side. The right side can be ignored.
 \end{itemize}	
 
@@ -316,15 +319,17 @@ double ternarySearch(double left, double right, double eps=1e-7){
 	\section{Sorting Algorithms}
 
 	
-	Sorting algorithms are used to put the elements of an array in a certain order according to the comparison operator. Numerical order or lexcographical orders are the most common ones, and there are a large number of sorting algorithms, but we discuss four of them: \textit{Insertion Sort}, \textit{Merge Sort}, \textit{Quick Sort}, \textit{Radix Sort}. 
+	Sorting algorithms are used to put the elements of an array in a certain order according to the comparison operator. Numerical order or lexicographical orders are the most common ones, and there are a large number of sorting algorithms, but we discuss four of them: \textit{Insertion Sort}, \textit{Merge Sort}, \textit{Quick Sort}, \textit{Radix Sort}. 
 	
-	For a better understanding, you are strongly recommended to go into this visualization site after reading the topics: \href{https://visualgo.net/en/sorting}{Link}
+	For a better understanding, you are strongly recommended to go to this visualization site after reading the topics: \href{https://visualgo.net/en/sorting}{Link}
 	
 		\subsection{Insertion Sort}
 		
 Think that you are playing a card game and want to sort them before the game. Your sorting strategy is simple: you have already sorted some part and every time you pick up the next card from unsorted part, you insert it into the correct place in sorted part. After you apply this process to all cards, the whole deck would be sorted. \\ \\
 This is the basic idea for sorting an array. We assume that the first element of the array is the sorted part, and other elements are in the unsorted part. Now, we choose the leftmost element of the unsorted part, and put it into the sorted part. In this way the left part of the array always remains sorted after every iteration, and when no element is left in the unsorted part, the array will be sorted. 
 
+\textbf{Complexity: }
+    O($N^{2}$).
 	
 \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 void insertionSort(int *ar, int size){
@@ -338,7 +343,7 @@ void insertionSort(int *ar, int size){
 
 		\subsection{Merge Sort}
 
-\textit{Merge Sort} is one of the fastest sorting algorithms that uses \textit{Divide and Conquer} paradigm. The algorithm \textbf{divides} the array into two halves, solves each part \textbf{recursively} using same sorting function and \textbf{combines} them in linear time by selecting the smallest value of the arrays every time.
+\textit{Merge Sort} is one of the fastest sorting algorithms that uses \textit{Divide and Conquer} paradigm. The algorithm \textbf{divides} the array into two halves, solves each part \textbf{recursively} using the same sorting function and \textbf{combines} them in linear time by selecting the smallest value of the arrays every time.
 
 \textbf{Procedure: }
 \begin{enumerate}
@@ -424,7 +429,7 @@ void quickSort(int *ar, int size){
 
 \textbf{Procedure: }
 \begin{enumerate}
-	\item For each digit from the least significant to the most, sort the array using \textit{Counting Sort} according to corresponding digit. \textit{Counting Sort} is used for keys between specific range, and it counts the number of elements which have different key values. After counting the number of distict key values, we can determine the position of elements in the array. 
+	\item For each digit from the least significant to the most, sort the array using \textit{Radix Sort} according to the corresponding digit. \textit{Radix Sort} is used for keys between specific range, and it counts the number of elements that have different key values. After counting the number of distinct key values, we can determine the position of elements in the array. 
 \end{enumerate}	
 
 \textbf{Complexity: }
@@ -470,12 +475,12 @@ void radixSort(int *ar, int size, int base=10){
 \cleardoublepage
     \section{Quickselect Algorithm}
 	
-	\textit{Quickselect} is a selection algorithm that \textit{finds the k-th smallest element in an unordered list}. The algorithm is closely related to QuickSort in partitioning stage; however, instead of recurring for both sides, it recurs only for the part that contains the k-th smallest element.
+	\textit{Quickselect} is a selection algorithm that \textit{finds the k-th smallest element in an unordered list}. The algorithm is closely related to QuickSort in the partitioning stage; however, instead of recurring for both sides, it recurs only for the part that contains the k-th smallest element.
 
 \textbf{Procedure: }
 \begin{enumerate}
 	\item Choose a pivot randomly,
-	\item For all values in the array, collect smaller values in the left of the array and greater values in the right of the array,
+	\item For all values in the array, collect smaller values on the left of the array and greater values on the right of the array,
 	\item Move the pivot to the correct place,
 	\item If the current position is equal to k, return the value at the position.
 	\item If the current position is more than k, repeat the same algorithm for the left partition.
