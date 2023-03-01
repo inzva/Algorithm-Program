@@ -134,7 +134,7 @@
 	\textbf {
 		inzva Algorithm Programme 2018-2019\\ \ \\
 		Bundle 6 \\ \ \\ 
-		Veri Yap{\i}lar{\i}- 1 \\ \ \\
+		Veri Yap{\i}lar{\i} - 1 \\ \ \\
 	}
 }
  \title{\vspace{-2em}\mytitle\vspace{-0.3em}}
@@ -143,7 +143,9 @@
 	Tahsin Enes Kuru  \\ \ \\ 
 	\textbf{Reviewers} \\ 
 	Baha Eren Yald{\i}z \\
-    Burak Bu\u{g}rul
+    Burak Bu\u{g}rul \\ \ \\
+	\textbf{Contributor} \\ 
+	Kerim Kochekov \\
 }
  \date{}
 \begin{document}
@@ -160,11 +162,10 @@
 	\markboth{Table of Contents}{}
 	\cleardoublepage
 	
-	\section{Giri\c{s}}
+	\section{Giri\c{s}} \label{introduction}
 
-    Bilgisayar biliminde veri yap{\i}lar{\i}, belirli bir eleman k\"{u}mesi \"{u}zerinde verimli bir \c{s}eklide bilgi edinmemize ayn{\i} zamanda bu elemanlar \"{u}zerinde de\u{g}i\c{s}iklikler yapabilmemize olanak sa\u{g}layan yap{\i}lard{\i}r. \c{C}al{\i}\c{s}ma prensipleri genellikle elemanlar{\i}n de\u{g}erlerini belirli bir kurala g\"{o}re saklamak daha sonra bu yap{\i}lar{\i} kullanarak elemanlar hakk{\i}nda sorulara (Bir dizinin belirli bir aral{\i}\u{g}{\i}ndaki en k\"{u}\c{c}\"{u}k say{\i} gibi) cevap aramakt{\i}r.
-	\section{Dinamik Veri Yap{\i}lar{\i}}
-	
+    Bilgisayar biliminde veri yap{\i}lar{\i}, belirli bir eleman k\"{u}mesi \"{u}zerinde verimli bir \c{s}eklide bilgi edinmemize ayn{\i} zamanda bu elemanlar \"{u}zerinde de\u{g}i\c{s}iklikler yapabilmemize olanak sa\u{g}layan yap{\i}lard{\i}r. \c{C}al{\i}\c{s}ma prensipleri genellikle elemanlar{\i}n de\u{g}erlerini belirli bir kurala g\"{o}re saklamak daha sonra bu yap{\i}lar{\i} kullanarak elemanlar hakk{\i}nda sorulara (mesela, bir dizinin belirli bir aral{\i}\u{g}{\i}ndaki en k\"{u}\c{c}\"{u}k say{\i}y{\i} bulmak gibi) cevap aramakt{\i}r.
+	\section{Dinamik Veri Yap{\i}lar{\i}} \label{dynamic}
 	\subsection{Linked List}
 	
 	Linked List veri yap{\i}s{\i}nda elemanlar, her eleman kendi de\u{g}erini ve bir sonraki eleman{\i}n adresini tutacak \c{s}ekilde saklan{\i}r. Yap{\i}daki elemanlar ba\c{s} elemandan(head) ba\c{s}lanarak son elemana(tail) gidecek \c{s}ekilde gezilebilir. Diziye kar\c{s}{\i}n avantaj{\i} haf{\i}zan{\i}n dinamik bir \c{s}ekilde kullan{\i}lmas{\i}d{\i}r. Bu veri yap{\i}s{\i}nda uygulanabilecek i\c{s}lemler:
@@ -184,7 +185,7 @@
     \clearpage
 
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-// Her bir elemani tutacak struct olusturuyoruz.
+// Her bir elemani (burada sayilari, yani int) tutacak struct olusturuyoruz.
 struct node
 {
   int data;
@@ -226,9 +227,10 @@ void print() {
     Stack veri yap{\i}s{\i}nda elemanlar yap{\i}ya son giren ilk \c{c}{\i}kar (LIFO) kural{\i}na uygun olacak \c{s}ekilde saklan{\i}r. Bu veri yap{\i}s{\i}nda uygulayabildi\u{g}imiz i\c{s}lemler:
     
     \begin{itemize}
-        \item Veri yap{\i}s{\i}n{\i}n en \"{u}st\"{u}ne eleman ekleme.
+        \item Veri yap{\i}s{\i}n{\i}n en \"{u}st\"{u}ne eleman ekleme .
         \item Veri yap{\i}s{\i}n{\i}n en \"{u}st\"{u}ndeki elemana eri\c{s}im.
         \item Veri yap{\i}s{\i}n{\i}n en \"{u}st\"{u}ndeki eleman{\i} silme.
+        \item Veri yap{\i}s{\i}n{\i}n bo\c{s} olup olmad{\i}\u{g}{\i}n{\i}n kontr\"{o}l\"{u}.
     \end{itemize}
     
     c++ dilindeki stl k\"{u}t\"{u}phanesinde bulunan haz{\i}r stack yap{\i}s{\i}n{\i}n kullan{\i}m{\i} a\c{s}a\u{g}{\i}daki gibidir.
@@ -236,12 +238,14 @@ void print() {
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 int main() {
   stack < int > st;
+  cout << st.empty() << endl; // Ilk bashta Stack bosh oldugu icin burada True donecektir.
   st.push(5); // Stack'in en ustune 5'i ekler. Stack'in yeni hali: {5}
-  st.push(7); // Stack'in en ustune 7'yi ekler. Stack'in yeni hali: {7,5}
-  st.push(6); // Stack'in en ustune 6'yiekler. Stack'in yeni hali : {6, 7, 5}
+  st.push(7); // Stack'in en ustune 7'yi ekler. Stack'in yeni hali: {7, 5}
+  st.push(6); // Stack'in en ustune 6'yi ekler. Stack'in yeni hali : {6, 7, 5}
   st.pop(); //Stack'in en ustundeki elemani siler. Stack'in yeni hali : {7, 5}
-  st.push(1); // Stack'in en ustune 1'i ekler. Stack'in yeni hali : {1 7, 5}
+  st.push(1); // Stack'in en ustune 1'i ekler. Stack'in yeni hali : {1, 7, 5}
   cout << st.top() << endl; // Stack'in en ustundeki elemana erisir. Ekrana 1 yazirir.  
+  cout << st.empty() << endl; // Burada Stack bosh olmadigindan oturu False donecektir.
 }
     \end{minted}
 	
@@ -253,6 +257,7 @@ int main() {
         \item Veri yap{\i}s{\i}n{\i}n en \"{u}st\"{u}ne eleman ekleme.
         \item Veri yap{\i}s{\i}n{\i}n en alt{\i}ndaki eleman{\i}na eri\c{s}im.
         \item Veri yap{\i}s{\i}n{\i}n en alt{\i}ndaki eleman{\i} silme.
+        \item Veri yap{\i}s{\i}n{\i}n bo\c{s} olup olmad{\i}\u{g}{\i}n{\i}n kontr\"{o}l\"{u}.
     \end{itemize}
     
     c++ dilindeki stl k\"{u}t\"{u}phanesinde bulunan haz{\i}r queue yap{\i}s{\i}n{\i}n kullan{\i}m{\i} a\c{s}a\u{g}{\i}daki gibidir.
@@ -260,12 +265,13 @@ int main() {
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 int main() {
   queue < int > q;
-  q.push(5); // queue'in en ustune 5'i ekler. queue'in yeni hali: {5}
-  q.push(7); // queue'in en ustune 7'yi ekler. queue'in yeni hali: {7,5}
-  q.push(6); // queue'in en ustune 6'yi ekler. queue'in yeni hali : {6, 7, 5}
-  q.pop(); //queue'in en altindaki elemani siler. queue'in yeni hali : {6,7}
-  q.push(1); // queue'in en ustune 1'i ekler. queue'in yeni hali : {1,6,7}
-  cout << q.front() << endl; // queue'in en ustundeki elemana erisir. Ekrana 7 yazirir.   
+  cout << q.empty() << endl; // Ilk bashta Queue bosh oldugu icin burada True donecektir.
+  q.push(5); // Queue'in en ustune 5'i ekler. Queue'in yeni hali: {5}
+  q.push(7); // Queue'in en ustune 7'yi ekler. Queue'in yeni hali: {7, 5}
+  q.push(6); // Queue'in en ustune 6'yi ekler. Queue'in yeni hali : {6, 7, 5}
+  q.pop(); //Queue'in en altindaki elemani siler. Queue'in yeni hali : {6, 7}
+  q.push(1); // Queue'in en ustune 1'i ekler. Queue'in yeni hali : {1, 6, 7}
+  cout << Q.front() << endl; // Queue'in en ustundeki elemana erisir. Ekrana 7 yazdirir.   
 }
     \end{minted}
 	
@@ -296,11 +302,12 @@ int main() {
   q.pop_back(); // deque'nin en ustundeki elemanini silme.
 }
     \end{minted}
+    \textbf{p.s}, deque veri yap{\i}s{\i} stack ve queue veri yap{\i}lar{\i}na g\"{o}re daha kapsaml{\i} oldu\u{g}undan \"{o}t\"{u}r\"{u} stack ve queue veri yapilarina g\"{o}re 2 kat fazla memory kulland{\i}\u{g}{\i}n{\i} a\c{c}{\i}kl{\i}kla s\"{o}yleyebiliriz.
     \cleardoublepage
 
-	\section{Prefix Sum}
+	           \section{Prefix Sum} \label{prefixsum}
 	
-	Prefix Sum dizisi bir dizinin prefixlerinin toplamlar{\i}yla olu\c{s}turulan bir veri yap{\i}s{\i}d{\i}r. Prefix sum dizisinin i indeksli eleman{\i} girdi dizisindeki 1 indeksli elemandan i indeksli elemana kadar olan elemanlar{\i}n toplam{\i}na e\c{s}it olacak \c{s}ekilde kurulur. Ba\c{s}ka bir de\u{g}i\c{s}le: $$sum_i = \sum_{j=1}^{i} {a_j} $$ \"{O}rnek bir $A$ dizisi i\c{c}in prefix sum dizisi \c{s}u \c{s}ekilde kurulmal{\i}d{\i}r:
+	Prefix Sum dizisi bir dizinin prefixlerinin toplamlar{\i}yla olu\c{s}turulan bir veri yap{\i}s{\i}d{\i}r. Prefix sum dizisinin i indeksli eleman{\i} girdi dizisindeki 1 indeksli elemandan i indeksli elemana kadar olan elemanlar{\i}n toplam{\i}na e\c{s}it olacak \c{s}ekilde kurulur. Ba\c{s}ka bir deyi\c{s}le: $$sum_i = \sum_{j=1}^{i} {a_j} $$ \"{O}rnek bir $A$ dizisi i\c{c}in prefix sum dizisi \c{s}u \c{s}ekilde kurulmal{\i}d{\i}r:
 
     \begin{table}[h]
     \centering
@@ -320,10 +327,11 @@ int main() {
 	
 	\subsection{\"{O}rnek Kod Par\c{c}alar{\i}}
 	
-    $sum_i = sum_{i -1} + a_i$ e\c{s}itli\u{g}i kolayca g\"{o}r\"{u}l\"{u}r. Ve bu e\c{s}itli\u{g}i kullanarak Prefix Sum dizisini girdi dizisindeki elemanlar{\i} s{\i}rayla gezerek kurabiliriz.
+    Prefix Sum dizisini kurarken $sum_i = sum_{i -1} + a_i$ e\c{s}itli\u{g}i kolayca g\"{o}r\"{u}lebilir ve bu e\c{s}itli\u{g}i kullanarak $sum[]$ dizisini girdi dizisindeki elemanlar{\i} s{\i}rayla gezerek kurabiliriz.
 	
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-int n,sum[N],a[N];
+const int n;
+int sum[n+1], a[n+1];
 // a dizisi girdi dizimiz, sum dizisi de prefix sum dizimiz olsun.
 
 void build() {
@@ -341,23 +349,26 @@ int query(int l,int r) {
 	
     Prefix sum dizisini kurma i\c{s}lemimizin zaman ve haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i} $O(N)$. Her sorguya da $O(1)$ karma\c{s}{\i}kl{\i}kta cevap verebiliyoruz. 
 
-    Prefix sum veri yap{\i}s{\i} ile ilgili problem: \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1474}{Link}.
+    Prefix sum veri yap{\i}s{\i} ile ilgili problem: \href{https://codeforces.com/problemset/problem/816/B}{Link}.
     \cleardoublepage
 
-	\section{Sparse Table}
+	\section{Sparse Table} \label{sparsetable}
 
-    Sparse Table aral{\i}klardaki elemanlar{\i}n toplam{\i}, minimumu, maksimumu ve eboblar{\i} gibi sorgulara $O(logN)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda cevap alabilmemizi sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r. Baz{\i} tip sorgular (aral{\i}ktaki minimum, maksimum say{\i}y{\i} bulma gibi) ise $O(1)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda yapmaya uygundur.
+    Sparse table aral{\i}klardaki elemanlar{\i}n toplam{\i}, minimumu, maksimumu ve eboblar{\i} gibi sorgulara $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda cevap alabilmemizi sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r. Baz{\i} tip sorgular (aral{\i}ktaki minimum, maksimum say{\i}y{\i} bulma gibi) ise $O(1)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda yapmaya uygundur.
     
-    Bu veri yap{\i}s{\i} durumu de\u{g}i\c{s}meyen, sabit bir veri \"{u}zerinde \"{o}n i\c{s}lemler yaparak kurulur. Dinamik veriler i\c{c}in kullan{\i}\c{s}l{\i} de\u{g}ildir. Veri \"{u}zerinde herhangi bir de\u{g}i\c{s}iklik durumda Sparse Table tekrardan kurulmal{\i}d{\i}r. Bu da maliyetli bir durumdur.
+    Bu veri yap{\i}s{\i} durumu de\u{g}i\c{s}meyen, sabit bir veri \"{u}zerinde \"{o}n i\c{s}lemler yaparak kurulur. Dinamik veriler i\c{c}in kullan{\i}\c{s}l{\i} de\u{g}ildir. Veri \"{u}zerinde herhangi bir de\u{g}i\c{s}iklik durumda Sparse table tekrardan kurulmal{\i}d{\i}r. Bu da maliyetli bir durumdur.
     
     \subsection{Yap{\i}s{\i} ve Kurulu\c{s}u}
     
-    Sparse table iki bouyutlu bir dizi \c{s}eklinde, $O(NlogN)$ haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}na sahip bir veri yap{\i}s{\i}d{\i}r. Dizinin her eleman{\i}ndan 2'nin kuvvetleri uzakl{\i}ktaki elemanlara kadar olan cevaplar Sparse tableda saklan{\i}r. $ST_{x,i}$, $x$ indeksli elemandan $x + 2^i$ indeksli elemana kadar olan aral{\i}\u{g}{\i}n cevab{\i}n{\i} saklayacak \c{s}ekilde sparse table kurulur.
+    Sparse table iki bouyutlu bir dizi \c{s}eklinde, $O(N\log(N))$ haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}na sahip bir veri yap{\i}s{\i}d{\i}r. Dizinin her eleman{\i}ndan 2'nin kuvvetleri uzakl{\i}ktaki elemanlara kadar olan cevaplar Sparse table'da saklan{\i}r. $ST_{x,i}$, $x$ indeksli elemandan $x + 2^i - 1$ indeksli elemana kadar olan aral{\i}\u{g}{\i}n cevab{\i}n{\i} saklayacak \c{s}ekilde sparse table kurulur.
     
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 //Toplam sorgusu icin kurulmus Sparse Table Yapisi
-void build() {
+const int n;
+const int LOG = log2(n);
+int a[n+1], ST[2*n][LOG+1];
 
+void build() {
   for (int i = 1 ; i <= n ; i++) {
     // [i,i] araliginin cevabi dizinin i indeksli elemanina esittir.
     ST[i][0] = a[i];
@@ -365,8 +376,8 @@ void build() {
 
   for (int i = 1 ; i <= LOG ; i++)
     for (int j = 1 ; j <= n ; j++) {
-      // [i,i+2^(j)] araliginin cevabi
-      // [i,i+2^(j - 1) - 1] araligi ile [i+2^(j - 1),i+2^j] araliginin
+      // [i,i+2^(j)-1] araliginin cevabi
+      // [i,i+2^(j - 1) - 1] araligi ile [i+2^(j - 1),i+2^j-1] araliginin
       // cevaplarinin birlesmesiyle elde edilir
       ST[i][j] = ST[i][j - 1] + ST[i + (1 << (j - 1))][j - 1];
     }
@@ -381,13 +392,13 @@ void build() {
     Herhangi bir $[l,r]$ aral{\i}\u{g}{\i} i\c{c}in sorgu algoritmas{\i} s{\i}ras{\i}yla \c{s}u \c{s}ekilde \c{c}al{\i}\c{s}{\i}r:
     
     \begin{itemize}
-        \item $[l,r]$ aral{\i}\u{g}{\i}n{\i} cevaplar{\i}n{\i} \"{o}nceden hesaplad{\i}\u{g}{\i}m{\i}z aral{\i}klara par\c{c}ala. (Sadece $2$'nin kuvveti uzunlu\u{g}unda par\c{c}alar{\i}n cevaplar{\i}n{\i} saklad{\i}\u{g}{\i}m{\i}z i\c{c}in aral{\i}\u{g}{\i}m{\i}z{\i} $2$'nin kuvveti uzunlu\u{g}unda aral{\i}klara ay{\i}rmal{\i}y{\i}z. $[l,r]$ aral{\i}\u{g}{\i}n{\i}n uzunlu\u{g}unun iklik tabanda yazd{\i}\u{g}{\i}m{\i}zda hangi aral{\i}klara par\c{c}alamam{\i}z gerekti\u{g}ini bulmu\c{s} oluruz.) 
+        \item $[l,r]$ aral{\i}\u{g}{\i}n{\i} cevaplar{\i}n{\i} \"{o}nceden hesaplad{\i}\u{g}{\i}m{\i}z aral{\i}klara par\c{c}ala(sadece $2$'nin kuvveti uzunlu\u{g}unda par\c{c}alar{\i}n cevaplar{\i}n{\i} saklad{\i}\u{g}{\i}m{\i}z i\c{c}in aral{\i}\u{g}{\i}m{\i}z{\i} $2$'nin kuvveti uzunlu\u{g}unda aral{\i}klara ay{\i}rmal{\i}y{\i}z. $[l,r]$ aral{\i}\u{g}{\i}n{\i}n uzunlu\u{g}unun ikilik tabanda yazd{\i}\u{g}{\i}m{\i}zda hangi aral{\i}klara par\c{c}alamam{\i}z gerekti\u{g}ini bulmu\c{s} oluruz.) 
         
         \item Bu aral{\i}klardan gelen cevaplar{\i} birle\c{s}tirerek $[l,r]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} hesapla.
         
     \end{itemize}
     
-    Herhangi bir aral{\i}\u{g}{\i}n uzunlu\u{g}unun ikilik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki $1$ rakamlar{\i}n{\i}n say{\i}s{\i} en fazla $logN$ olabilece\u{g}inden par\c{c}alayaca\u{g}{\i}m{\i}z aral{\i}k say{\i}s{\i} da en fazla $logN$ olur. Dolay{\i}s{\i}yla sorgu i\c{s}lemimiz $O(logN)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r. 
+    Herhangi bir aral{\i}\u{g}{\i}n uzunlu\u{g}unun ikilik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki $1$ rakamlar{\i}n{\i}n say{\i}s{\i} en fazla $\log(N)$ olabilece\u{g}inden par\c{c}alayaca\u{g}{\i}m{\i}z aral{\i}k say{\i}s{\i} da en fazla $\log(N)$ olur. Dolay{\i}s{\i}yla sorgu i\c{s}lemimiz $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r. 
     
     \"{O}rne\u{g}in: $[4,17]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} hesaplamak i\c{c}in algoritmam{\i}z $[4,17]$ aral{\i}\u{g}{\i}n{\i} $[4,11]$,$[12,15]$ ve $[16,17]$ aral{\i}klar{\i}na ay{\i}r{\i}r ve bu $3$ aral{\i}ktan gelen cevaplar{\i} birle\c{s}tirerek istenilen cevab{\i} hesaplar.
     
@@ -420,7 +431,7 @@ int query(int l,int r) {
     
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
 int RMQ(int l,int r) {
-  // log dizisinde her sayinin log2 degerleri sakldir.
+  // log[] dizisinde her sayinin onceden hesapadigimiz log2 degerleri saklidir.
   int j = log[r - l + 1];
   return min(ST[l][j], ST[r - (1 << j) + 1][j]);  
 }
@@ -430,9 +441,9 @@ int RMQ(int l,int r) {
 
     \cleardoublepage
 	
-	\section{Binary Indexed Tree}
+	\section{Binary Indexed Tree} \label{bit}
 	
-	Fenwick tree olarak da bilinen Binary Indexed Tree, Prefix sum ve Sparse Table yap{\i}lar{\i}na benzer bir yap{\i}da olup dizi \"{u}zerinde de\u{g}i\c{s}iklik yapabilmemize olanak sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r. Fenwick Tree'nin di\u{g}er veri yap{\i}lar{\i}na g\"{o}re en b\"{u}y\"{u}k avantaj{\i} pratikte daha h{\i}zl{\i} olmas{\i} ve haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}n{\i}n $O(N)$ olmas{\i}d{\i}r. Ancak Fenwick Tree'de sadece prefix cevaplar{\i} saklayabildi\u{g}imizden aral{\i}klarda minimum, maksimum ve en b\"{u}y\"{u}k ortak b\"{o}len gibi baz{\i} sorgular{\i}n cevaplar{\i}n{\i} elde edemeyiz.
+Fenwick Tree olarak da bilinen Binary Indexed Tree, Prefix Sum$^\ref{prefixsum}$  ve Sparse Table$^\ref{sparsetable}$ yap{\i}lar{\i}na benzer bir yap{\i}da olup dizi \"{u}zerinde de\u{g}i\c{s}iklik yapabilmemize olanak sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r. Fenwick Tree'nin di\u{g}er veri yap{\i}lar{\i}na g\"{o}re en b\"{u}y\"{u}k avantaj{\i} pratikte daha h{\i}zl{\i} olmas{\i} ve haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}n{\i}n $O(N)$ olmas{\i}d{\i}r. Ancak Fenwick Tree'de sadece prefix cevaplar{\i} (veya suffix cevaplar{\i}) saklayabildi\u{g}imizden aral{\i}klarda minimum, maksimum ve ebob gibi baz{\i} sorgular{\i}n cevaplar{\i}n{\i} elde edemeyiz.
 	
 	\subsection{Yap{\i}s{\i} ve Kurulu\c{s}u}
 	
@@ -440,9 +451,9 @@ int RMQ(int l,int r) {
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=\linewidth/1]{fenwick.png}
+		\includegraphics[scale=0.8]{fenwick.png}
 		\label{fig:fenwick}
-        \caption{$a = [62,6,85,60,39,47,60,16,17]$ dizisinde toplam sorgusu i\c{c}in kurulmu\c{s} Fenwick Tree yap{\i}s{\i}}
+        \caption{8 uzulu\u{g}undaki bir dizi i\c{c}in kurulmu\c{s} Fenwick Tree yap{\i}s{\i}}
 	\end{figure}
 	
 	\clearpage
@@ -456,7 +467,7 @@ int RMQ(int l,int r) {
         \item x'in de\u{g}erini $x - g(x)$ yap. E\u{g}er x'in yeni de\u{g}eri $0$'dan b\"{u}y\"{u}k ise 1.i\c{s}lemden hesaplamaya devam et.  
     \end{enumerate}
     
-    $[1,x]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} hesaplamak i\c{c}in yap{\i}lan i\c{s}lem say{\i}s{\i} $x$ say{\i}s{\i}n{\i}n $2$'lik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki $1$ say{\i}s{\i}na e\c{s}ittir. \c{C}\"{u}nk\"{u} her d\"{o}ng\"{u}de x'den $2$'lik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki en sa\u{g}daki $1$ bitini \c{c}{\i}kart{\i}yoruz. Dolay{\i}s{\i}yla sorgu i\c{s}lemimiz $O(logN)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r. $[l,r]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} da $[1,r]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}ndan $[1,l - 1]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} \c{c}{\i}kararak kolay bir \c{s}ekilde elde edebiliriz.
+    $[1,x]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} hesaplamak i\c{c}in yap{\i}lan i\c{s}lem say{\i}s{\i} $x$ say{\i}s{\i}n{\i}n $2$'lik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki $1$ say{\i}s{\i}na e\c{s}ittir. \c{C}\"{u}nk\"{u} her d\"{o}ng\"{u}de x'den $2$'lik tabandaki yaz{\i}l{\i}\c{s}{\i}ndaki en sa\u{g}daki $1$ bitini \c{c}{\i}kart{\i}yoruz. Dolay{\i}s{\i}yla sorgu i\c{s}lemimiz $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r. $[l,r]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} da $[1,r]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}ndan $[1,l - 1]$ aral{\i}\u{g}{\i}n{\i}n cevab{\i}n{\i} \c{c}{\i}kararak kolay bir \c{s}ekilde elde edebiliriz.
     
     \fbox{
         \parbox{\textwidth}
@@ -473,7 +484,7 @@ int RMQ(int l,int r) {
         \item A\u{g}a\c{c}ta $x$ indeksli eleman{\i} i\c{c}eren t\"{u}m d\"{u}\u{g}\"{u}mlerin de\u{g}erlerini g\"{u}ncelle.
     \end{itemize}
     
-    Fenwick Tree'de x indeksli eleman{\i} i\c{c}eren maksimum $logN$ tane aral{\i}k oldu\u{g}undan g\"{u}ncelleme algoritmas{\i} $O(logN)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r.
+    Fenwick Tree'de x indeksli eleman{\i} i\c{c}eren maksimum $\log(N)$ tane aral{\i}k oldu\u{g}undan g\"{u}ncelleme algoritmas{\i} $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r.
     
     \clearpage
     
@@ -481,9 +492,11 @@ int RMQ(int l,int r) {
     
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
     
-int n,tree[N],a[N];
+const int n;
+int tree[n+1], a[n+1];
 
-void add(int val,int x) { // x indeksli elemanin degerini val degeri kadar artirir.
+void add(int val, int x) { //x indeksli elemanin degerini val degeri kadar artirir.
+  //x indeksinin etkiledigi butun dugumleri val degeri kadar artirir.
   while(x <= n) {
     tree[x] += val;
     x += x & (-x);
@@ -500,17 +513,19 @@ int sum(int x) { // 1 indeksli elemandan x indeksli elemana
   return res;
 }
 
-int query(int l,int r) { // [l,r] araligindaki elemanlarin toplamini verir.
+int query(int l, int r) { // [l,r] araligindaki elemanlarin toplamini verir.
   return sum(r) - sum(l - 1);
 }
 
 void build() { // a dizisi uzerine fenwick tree yapisini kuruyoruz.
   for (int i = 1 ; i <= n ; i++)
-    add(a[i],i);
+    add(a[i], i);
   return;
 }
 
     \end{minted}
+    
+    Fenwick Tree veri yap{\i}s{\i} ile ilgili problem: \href{https://www.spoj.com/problems/CSUMQ/}{Link}.
     
     \subsection{Aral{\i}k G\"{u}ncelleme ve Eleman Sorgu}
 
@@ -525,7 +540,8 @@ void build() { // a dizisi uzerine fenwick tree yapisini kuruyoruz.
     \subsubsection{\"{O}rnek Kod Par\c{c}alar{\i}}
     
     \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
-int n,a[N],b[N];
+const int n;
+int a[n+1], b[n+1];
 
 void add(int val,int x) { // x indeksli elemanin degerini val degeri kadar artirir.
   while(x <= n) {
@@ -548,12 +564,12 @@ void build() {
     b[i] = a[i] - a[i - 1]; // b dizisini olusturuyoruz.
 
   for (int i = 1 ; i <= n ; i++)
-    add(b[i],i); // b dizisi uzerine fenwick tree kuruyoruz.
+    add(b[i], i); // b dizisi uzerine fenwick tree kuruyoruz.
 }
 
-void update(int l,int r,int x) {
-  add(x,l);
-  add(-x,r + 1);
+void update(int l, int r, int x) {
+  add(x, l);
+  add(-x, r + 1);
 }
 
 void query(int x) {
@@ -562,7 +578,6 @@ void query(int x) {
 
     \end{minted}
     
-    Fenwick Tree veri yap{\i}s{\i} ile ilgili problem: \href{https://www.spoj.com/problems/CSUMQ/}{Link}.
     \cleardoublepage
 
 	\section{SQRT Decomposition}
@@ -676,10 +691,10 @@ void update(int x,int val) {
     
 	\section{Segment Tree}
 	
-    Segment Tree bir dizide $O(log N)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda herhangi bir $[l,r]$ aral{\i}\u{g}{\i} icin minimum, maksimum, toplam gibi sorgulara cevap verebilmemize ve bu aral{\i}klar \"{u}zerinde g\"{u}ncelleme yapabilmemize olanak sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r.
+    Segment Tree bir dizide $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda herhangi bir $[l,r]$ aral{\i}\u{g}{\i} icin minimum, maksimum, toplam gibi sorgulara cevap verebilmemize ve bu aral{\i}klar \"{u}zerinde g\"{u}ncelleme yapabilmemize olanak sa\u{g}layan bir veri yap{\i}s{\i}d{\i}r.
     
-    Segment Tree'nin, Fenwick Tree ve Sparse Table yap{\i}lar{\i}ndan farkl{\i} olarak elemanlar \"{u}zerinde g\"{u}ncelleme yap{\i}labilmesi ve minimum, maksimum gibi sorgulara da olanak sa\u{g}lamas{\i} y\"{o}n\"{u}nden daha kullan{\i}\c{s}l{\i}d{\i}r. Ayr{\i}ca segment tree $O(N)$ haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}na sahipken Sparse Table yaps{\i}n{\i}nda 
-    gereken haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i} $O(NlogN)$'dir. 
+    Segment Tree'nin, Fenwick Tree$^\ref{bit}$ ve Sparse Table$^\ref{sparsetable}$ yap{\i}lar{\i}ndan farkl{\i} olarak elemanlar \"{u}zerinde g\"{u}ncelleme yap{\i}labilmesi ve minimum, maksimum gibi sorgulara da olanak sa\u{g}lamas{\i} y\"{o}n\"{u}nden daha kullan{\i}\c{s}l{\i}d{\i}r. Ayr{\i}ca Segment Tree $O(N)$ haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i}na sahipken Sparse Table yaps{\i}n{\i}nda 
+    gereken haf{\i}za karma\c{s}{\i}kl{\i}\u{g}{\i} $O(N \log(N))$'dir. 
     
     \subsection {Yap{\i}s{\i} ve Kurulu\c{s}u}
     
@@ -705,8 +720,8 @@ void build(int ind,int l,int r) {
   }
   else {
     int mid = (l + r) / 2;
-    build(ind * 2,l,mid);
-    build(ind * 2 + 1,mid + 1,r);
+    build(ind * 2, l, mid);
+    build(ind * 2 + 1, mid + 1, r);
     // [l,r] araliginin cevabini
     // [l,mid] ve [mid + 1,r] araliklarinin cevaplarinin birlesmesiyle olusur.
     tree[ind] = tree[ind * 2] + tree[ind * 2 + 1];
@@ -731,7 +746,7 @@ void build(int ind,int l,int r) {
     \end{itemize}
 
     A\u{g}ac{\i}n her derinli\u{g}inde cevab{\i}m{\i}z i\c{c}in gerekli aral{\i}klardan maksimum 2
-    adet bulunabilir. Bu y\"{u}zden sorgu algoritmas{\i} $O(logN)$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r.
+    adet bulunabilir. Bu y\"{u}zden sorgu algoritmas{\i} $O(\log(N))$ zaman karma\c{s}{\i}kl{\i}\u{g}{\i}nda \c{c}al{\i}\c{s}{\i}r.
 
     
     \clearpage
@@ -750,7 +765,7 @@ void build(int ind,int l,int r) {
 // [lw,rw] sorguda cevabini aradigimiz aralik.
 // [l,r] ise agactaki ind nolu node'da cevabini sakladigimiz aralik.
 
-int query(int ind,int l,int r,int lw,int rw) { 
+int query(int ind, int l, int r, int lw, int rw) { 
   if (l > rw or r < lw) //bulundugumuz aralik cevabini aradigimiz araligin disinda.
     return 0;
   if (l >= lw and r <= rw) //cevabini aradigimiz aralik bu araligi tamamen kapsiyor.
@@ -758,7 +773,8 @@ int query(int ind,int l,int r,int lw,int rw) {
   int mid = (l + r) / 2;
   //Agacta recursive birseklide araligimizi
   // araliklara bolup gelen cevaplari birlestiyoruz.  
-  return query(ind * 2,l,mid,lw,rw) + query(ind * 2 + 1,mid + 1,r,lw,rw);
+  return query(ind * 2, l, mid, lw, rw) 
+    + query(ind * 2 + 1, mid + 1, r, lw, rw);
 }
     
     \end{minted}    
@@ -768,10 +784,10 @@ int query(int ind,int l,int r,int lw,int rw) {
     Dizideki $x$ indeksli eleman{\i}n{\i}n de\u{g}erini g\"{u}ncellemek i\c{c}in kullan{\i}lan algoritma \c{s}u \c{s}eklide \c{c}al{\i}\c{s}{\i}r.
     
     \begin{itemize}
-        \item A\u{g}a\c{c}ta $x$ indeksli eleman{\i} i\c{c}eren tum d\"{u}\u{g}\"umlerin de\u{g}erlerini g\"{u}ncelle.
+        \item A\u{g}a\c{c}ta $x$ indeksli eleman{\i} i\c{c}eren t\"{u}m d\"{u}\u{g}\"umlerin de\u{g}erlerini g\"{u}ncelle.
     \end{itemize}
     
-    A\u{g}a\c{c}ta x indeksli eleman{\i}n cevab{\i}n{\i} tutan yaprak d\"{u}\u{g}\"{u}mden root d\"{u}\u{g}\"{u}me kadar toplamda $logN$ d\"{u}\u{g}\"{u}m\"{u}n de\u{g}erini g\"{u}ncellememiz yeterlidir. Dolay{\i}s{\i}yla herhangi bir eleman{\i}n de\u{g}erini g\"{u}ncellemenin zaman karma\c{s}{\i}kl{\i}\u{g}{\i} $O(logN)$'dir.
+    A\u{g}a\c{c}ta x indeksli eleman{\i}n cevab{\i}n{\i} tutan yaprak d\"{u}\u{g}\"{u}mden root d\"{u}\u{g}\"{u}me kadar toplamda $\log(N)$ d\"{u}\u{g}\"{u}m\"{u}n de\u{g}erini g\"{u}ncellememiz yeterlidir. Dolay{\i}s{\i}yla herhangi bir eleman{\i}n de\u{g}erini g\"{u}ncellemenin zaman karma\c{s}{\i}kl{\i}\u{g}{\i} $O(\log(N))$'dir.
     
 	\begin{figure}[h]
 		\centering
@@ -872,6 +888,10 @@ void update(int ind,int l,int r,int x,int val) {
     \bibitem{16}
     
     https://visualgo.net/en/list    
+
+    \bibitem{17}
+
+    https://cp-algorithms.com/data\_structures/fenwick.html
     
     \end{thebibliography} 
 
