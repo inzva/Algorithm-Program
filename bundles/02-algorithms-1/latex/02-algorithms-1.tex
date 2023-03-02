@@ -149,7 +149,7 @@
 \newcommand{\mytitle}
 {
 	\textbf {
-		inzva Algorithm Program 2018-2019\\ \ \\
+		inzva Algorithm Program \\ \ \\
 		Bundle 2 \\ \ \\ 
 		Algorithms - 1 \\ \ \\
 	}
@@ -215,7 +215,7 @@ int linearSearch(int *array, int size, int key){
 	
 		\subsection{Binary Search}
 			
-We know the linear search is quite a slow algorithm because it compares each element of the set with the search key, and there is a high-speed searching technique for \textbf{sorted} data instead of linear search, which is the \textbf{binary search}. After each comparison, the algorithm eliminates half of the data using the sorting property. 
+Linear search is quite a slow algorithm because it compares each element of the set with a search key. There is a high-speed searching technique for \textbf{sorted} data instead of linear search. This technique is called the \textbf{binary search}. After each comparison, the algorithm eliminates half of the data using the sorting property. 
 
 We can also use binary search on increasing functions in the same way. 
 
@@ -429,7 +429,10 @@ void quickSort(int *ar, int size){
 
 \textbf{Procedure: }
 \begin{enumerate}
-	\item For each digit from the least significant to the most, sort the array using \textit{Radix Sort} according to the corresponding digit. \textit{Radix Sort} is used for keys between specific range, and it counts the number of elements that have different key values. After counting the number of distinct key values, we can determine the position of elements in the array. 
+    \item Start from the least significant digit of the integers being sorted.
+    \item Apply \textit{Counting Sort} to the entire array based on the digit at the current position. We use \textit{Counting Sort} to compute a cumulative count of the number of integers that are less than or equal to each integer in the array based on their digit at the current position. This count is used to determine the final position of each integer in the sorted array.
+    \item If we are not considering the most significant digit, move to the digit on the left and repeat Step 2.
+    \item If we have considered all digits, the array is now sorted in ascending order based on the digits of the integers.
 \end{enumerate}	
 
 \textbf{Complexity: }
