@@ -1,8 +1,3 @@
 Onsite Contest
 --------------
-* https://www.hackerrank.com/contests/inzva-05-dp-1-online-2018
-
-Online Contest
---------------
-* https://www.hackerrank.com/contests/inzva-05-dp-1-onsite-2018
-
+* https://algoleague.com/contest/algorithm-program-2021-2022-spring-dynamic-programming-contest/description
