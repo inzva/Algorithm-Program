@@ -1348,15 +1348,14 @@ using namespace std;
 #define mod 1000000007
 
 long long fastExp(long long n, long long k){
-    n %= mod;
-    if(k == 0) return 1;
-    if(k == 1) return n;
+    if (k == 0)
+        return 1;
     
-    long long temp = fastExp(n, k>>1);
+    n %= mod;
+    long long temp = fastExp(n, k >> 1);
     
     // If k is odd return n * temp * temp
     // If k is even return temp * temp
-    // Take mod, since we can have a large number that overflows from long long
     
     // The product of two factors that are each bounded by mod is bounded by
     // mod squared. If we multiply this product with yet another factor that
@@ -1364,8 +1363,9 @@ long long fastExp(long long n, long long k){
     // equal to 1000000007 by default, the result might not fit into
     // long longs, leading to an overflow. To avoid that, we must take
     // the modulus of n * temp before multiplying it with temp yet again.
-    if((k&1) == 1) return ((n * temp) % mod * temp) % mod;
-    return (temp * temp) % mod;
+    if (k & 1)
+        return n * temp % mod * temp % mod;
+    return temp * temp % mod;
 }
 int main() {
     long long n,k;
@@ -1380,7 +1380,6 @@ int main() {
     
     return 0;
 }
-
 
 \end{minted}
 \textbf{Output}
