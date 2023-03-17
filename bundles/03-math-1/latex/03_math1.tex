@@ -482,7 +482,7 @@ Many problems requires a knowledge in modular arithmetic. Therefore, it makes mo
 \end{itemize}
 \paragraph{\textbf{Multiplication}}
 \begin{itemize}
-  \item if $a = c$, then $a \mod{n} \cdot b \mod{n} \equiv c \mod{n}$.
+  \item if $a \cdot b = c$, then $a \mod{n} \cdot b \mod{n} \equiv c \mod{n}$.
   \item if $a \equiv b \mod{n}$, then $a \cdot k \equiv b \cdot k \mod{n}$ for any integer $k$.
   \item if $a \equiv b \mod{n}$ and $c \equiv d \mod{n}$, then $(a \cdot c) \equiv (b \cdot d) \mod{n}$
 \end{itemize}
@@ -1348,16 +1348,24 @@ using namespace std;
 #define mod 1000000007
 
 long long fastExp(long long n, long long k){
-    if(k == 0) return 1;
-    if(k == 1) return n;
+    if (k == 0)
+        return 1;
     
-    long long temp = fastExp(n, k>>1);
+    n %= mod;
+    long long temp = fastExp(n, k >> 1);
     
     // If k is odd return n * temp * temp
     // If k is even return temp * temp
-    // Take mod, since we can have a large number that overflows from long long
-    if((k&1) == 1) return (n * temp * temp) % mod
-    return (temp * temp) % mod;
+    
+    // The product of two factors that are each bounded by mod is bounded by
+    // mod squared. If we multiply this product with yet another factor that
+    // is bounded by mod, the result will be bounded by mod cubed. As mod is
+    // equal to 1000000007 by default, the result might not fit into
+    // long longs, leading to an overflow. To avoid that, we must take
+    // the modulus of n * temp before multiplying it with temp yet again.
+    if (k & 1)
+        return n * temp % mod * temp % mod;
+    return temp * temp % mod;
 }
 int main() {
     long long n,k;
@@ -1366,13 +1374,12 @@ int main() {
     // Calculate the runtime of the function.
     clock_t tStart = clock();
     
-    long long res = expon(n, k);
+    long long res = fastExp(n, k);
     printf("Time taken: %.6fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
     printf("%lld\n", res);
     
     return 0;
 }
-
 
 \end{minted}
 \textbf{Output}
