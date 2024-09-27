@@ -1,0 +1,24 @@
+<!-- Title and Level -->
+<h1 style="display: inline;">
+    {% if page.meta.title %}    <!-- if meta has title use it -->
+        {{ page.meta.title }}
+    {% else %}                  <!-- else use filename -->
+        {{ page.title }}
+    {% endif %}
+</h1>
+
+<hr>
+
+<!-- Page content -->
+{{ page.content }}
+
+<!-- Editors and Reviewers -->
+{% if page.meta.editors|length or page.meta.reviewers|length %}
+    <hr>
+    {% if page.meta.editors|length %}
+        <p><strong>Editors: </strong>{{page.meta.editors|join(", ")}}</p>
+    {% endif %}
+    {% if page.meta.reviewers|length %}
+        <p><strong>Reviewers: </strong>{{page.meta.reviewers|join(", ")}}</p>
+    {% endif %}
+{% endif %}
