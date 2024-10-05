@@ -2,8 +2,6 @@
 title: Introduction
 ---
 
-# Introduction
-
 **Editor:** Muhammed Burak Buğrul
 
 **Reviewers:** Kadir Emre Oto & Yusuf Hakan Kalaycı
