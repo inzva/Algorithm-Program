@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - Introduction: introduction/index.md
   - Dynamic Programming: dynamic-programming/index.md
+  - Algorithms - I:  algorithms-i/index.md
 theme:
   name: material
   custom_dir: docs/overrides
@@ -56,6 +57,7 @@ extra_css:
 
 markdown_extensions:
   - pymdownx.highlight:
+      linenums: true
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -70,6 +72,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+  - md_in_html
 
 plugins:
   - search
