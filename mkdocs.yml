@@ -5,6 +5,7 @@ nav:
   - Introduction: introduction/index.md
   - Dynamic Programming: dynamic-programming/index.md
   - Algorithms - I:  algorithms-i/index.md
+  - Data Structures - I:  data-structures-i/index.md
 theme:
   name: material
   custom_dir: docs/overrides
@@ -75,6 +76,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - md_in_html
+  - tables
 
 plugins:
   - search
