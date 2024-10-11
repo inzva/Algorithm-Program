@@ -1,4 +1,8 @@
-# Dynamic Programming
+---
+title: Dynamic Programming
+tags:
+    - Dynamic Programming
+---
 
 Dynamic programming (DP) is a technique used to avoid computing the same sub-solution multiple times in a recursive algorithm. A sub-solution of the problem is constructed from the previously found ones. DP solutions have a polynomial complexity, which ensures a much faster running time than other techniques like backtracking or brute-force.
 
@@ -45,7 +49,7 @@ def fibonacci(n):
 
 ### Dynamic Programming
 
-- **Top-Down - Memoization:**  
+- **Top-Down - Memoization:**
   Recursion leads to unnecessary repeated calculations. Memoization solves this by caching the results of previously computed Fibonacci numbers, so they don't have to be recalculated.
 
 ```python
@@ -70,7 +74,7 @@ def fibonacci(n):
 </figure>
 
 
-- **Bottom-Up:**  
+- **Bottom-Up:**
   The bottom-up approach eliminates recursion by computing the Fibonacci numbers in order, starting from the base cases and building up to the desired value.
 
 ```python

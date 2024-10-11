@@ -1,4 +1,9 @@
-# Tree Child-Sibling Notation
+---
+title: Tree Child-Sibling Notation
+tags:
+    - Dynamic Programming
+    - Tree Child-Sibling Notation
+---
 
 In this method, we change the structure of the tree. In a standard tree, each parent node is connected to all of its children. However, in the **child-sibling notation**, a node stores a pointer to only one of its children. Additionally, the node also stores a pointer to its immediate right sibling. 
 

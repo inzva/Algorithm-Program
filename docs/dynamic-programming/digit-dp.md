@@ -1,4 +1,9 @@
-# Digit DP
+---
+title: Digit DP
+tags:
+    - Dynamic Programming
+    - Digit DP
+---
 
 Problems that require the calculation of how many numbers there are between two values (say, \( A \) and \( B \)) that satisfy a particular property can be solved using digit dynamic programming (Digit DP).
 

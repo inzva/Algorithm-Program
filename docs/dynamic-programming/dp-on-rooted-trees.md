@@ -1,4 +1,9 @@
-# DP on Rooted Trees
+---
+title: DP on Rooted Trees
+tags:
+    - Dynamic Programming
+    - DP on Rooted Trees
+---
 
 In dynamic programming (DP) on rooted trees, we define functions for the nodes of the tree, which are calculated recursively based on the children of each node. One common DP state is usually associated with a node \(i\), representing the sub-tree rooted at node \(i\).
 
