@@ -1,4 +1,9 @@
-# Common Dynamic Programming Problems
+---
+title: Common Dynamic Programming Problems
+tags:
+    - Dynamic Programming
+    - Common Dynamic Programming Problems
+---
 
 ## Coin Problem
 

@@ -1,4 +1,9 @@
-# Walk Counting using Matrix Exponentiation
+---
+title: Walk Counting using Matrix Exponentiation
+tags:
+    - Dynamic Programming
+    - Walk Counting using Matrix Exponentiation
+---
 
 Matrix exponentiation can be used to count the number of walks of a given length on a graph.
 

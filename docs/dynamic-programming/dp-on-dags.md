@@ -1,4 +1,9 @@
-# DP on Directed Acyclic Graphs (DAGs)
+---
+title: DP on Directed Acyclic Graphs (DAGs)
+tags:
+    - Dynamic Programming
+    - DP on Directed Acyclic Graphs (DAGs)
+---
 
 As we know, the nodes of a directed acyclic graph (DAG) can be sorted topologically, and DP can be implemented efficiently using this topological order. 
 

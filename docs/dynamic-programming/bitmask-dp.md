@@ -1,4 +1,9 @@
-# Bitmask DP
+---
+title: Bitmask DP
+tags:
+    - Dynamic Programming
+    - Bitmask DP
+---
 
 ## What is Bitmask?
 

@@ -1,7 +1,7 @@
 ---
 title: Dynamic Programming
 tags:
-    - "Dynamic Programming"
+    - Dynamic Programming
 ---
 
 **Editor:** Halil Çetiner
@@ -11,23 +11,15 @@ tags:
 ## Introduction
 Next section is about the *Greedy Algorithms* and *Dynamic Programming*. It will be quite a generous introduction to the concepts and will be followed by some common problems.
 
-- [Greedy Algorithms](./greedy_algorithms.md)
-
-- [Dynamic Programming](./dynamic_programming.md)
-
-- [Common DP Problems](./common_dp_problems.md)
-
-- [Bitmask DP](./bitmask_dp.md)
-
-- [DP on Rooted Trees](./dp_on_rooted_trees.md)
-
-- [DP on Directed Acyclic Graphs](./dp_on_directed_acyclic_graphs.md)
-
-- [Digit DP](./digit_dp.md)
-
-- [Walk Counting using Matrix Exponentiation](./walk_counting_with_matrix.md)
-
-- [Tree Child-Sibling Notation](./tree_child_sibling_notation.md)
+### [Greedy Algorithms](greedy-algorithms.md)
+### [Dynamic Programming](dynamic-programming.md)
+### [Common DP Problems](common-dp-problems.md)
+### [Bitmask DP](bitmask-dp.md)
+### [DP on Rooted Trees](dp-on-rooted-trees.md)
+### [DP on Directed Acyclic Graphs](dp-on-dags.md)
+### [Digit DP](./digit-dp.md)
+### [Walk Counting using Matrix Exponentiation](./walk-counting-with-matrix.md)
+### [Tree Child-Sibling Notation](./tree-child-sibling-notation.md)
 
 ## References
 

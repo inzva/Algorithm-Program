@@ -1,4 +1,9 @@
-# Greedy Algorithms
+---
+title: Greedy Algorithms
+tags:
+    - Dynamic Programming
+    - Greedy Algorithms
+---
 
 A *greedy algorithm* is an algorithm that follows the problem solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum. A greedy algorithm never takes back its choices, but directly constructs the final solution. For this reason, greedy algorithms are usually very efficient.
 

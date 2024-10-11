@@ -1,7 +1,17 @@
 ---
-title: Algorithms - I
+title: Algorithms
 tags:
-    - "Algorithms"
+    - Algorithms
+    - Linear Search
+    - Binary Search
+    - Ternary Search
+    - Sorting Algorithms
+    - Insertion Sort
+    - Merge Sort
+    - Quick Sort
+    - Radix Sort
+    - Quickselect Algorithm
+    - Divide and Conquer
 ---
 
 **Editor:** Kadir Emre Oto

@@ -3,9 +3,9 @@ site_url: https://inzva.github.io/Algorithm-Program/
 nav:
   - Home: index.md
   - Introduction: introduction/index.md
+  - Data Structures: data-structures/index.md
+  - Algorithms: algorithms/index.md
   - Dynamic Programming: dynamic-programming/index.md
-  - Algorithms - I:  algorithms-i/index.md
-  - Data Structures - I:  data-structures-i/index.md
 theme:
   name: material
   custom_dir: docs/overrides
@@ -14,9 +14,6 @@ theme:
   features:
     - toc.follow
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -35,7 +32,7 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
       primary: black
-      accent: purple
+      accent: white
 
 extra:
   social:
@@ -54,6 +51,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra_css:
+  - static/stylesheets/main.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 markdown_extensions:
