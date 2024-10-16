@@ -2,6 +2,7 @@
 title: Topological Sort
 tags:
     - Graph
+    - Topological Sort
 ---
 
 ## Definition

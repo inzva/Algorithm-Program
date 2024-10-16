@@ -2,6 +2,8 @@
 title: Shortest Path Problem
 tags:
     - Graph
+    - Shortest Path Problem
+    - Dijkstra
 ---
 
 ## Definition

@@ -2,6 +2,8 @@
 title: Breadth First Search
 tags:
     - Graph
+    - Breadth First Search
+    - BFS
 ---
 
 Breadth First Search (BFS) is an algorithm for traversing or searching tree. (For example, you can find the shortest path from one node to another in an unweighted graph.)

@@ -25,6 +25,11 @@ Graph are used to show a relation between objects. So, some graphs may have dire
 <figcaption>Figure 1: a simple unweigted graph</figcaption>
 </figure>
 
+### [Depth First Search](depth-first-search.md)
+### [Breadth First Search](breadth-first-search.md)
+### [Shortest Path](shortest-path.md)
+### [Topological Sort](topological-sort.md)
+
 ## References
 
 1. [https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)

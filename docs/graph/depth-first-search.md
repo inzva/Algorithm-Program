@@ -2,6 +2,8 @@
 title: Depth First Search
 tags:
     - Graph
+    - Depth First Search
+    - DFS
 ---
 
 Depth First Search (DFS) is an algorithm for traversing or searching tree. (For example, you can check if graph is connected or not via DFS) [2]
