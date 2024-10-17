@@ -14,7 +14,7 @@ There are many important usages of topological sorting in computer science; appl
 
 There are known algorithms (e.g Kahn’s algorithm) to find topological order in linear time. Below, you can find one of the implementations:
 
-<figure>
+<figure markdown="span">
 ![Topological Order](img/toporder.png)
 <figcaption>For example, a topological sorting of this graph is “5 4 2 3 1 0”. There can be more than one topological sorting for a graph. For example, another topological sorting of the following graph is “4 5 2 3 1 0”. The first vertex in topological sorting is always a vertex with in-degree as 0 (a vertex with no incoming edges)[6].</figcaption>
 </figure>
