@@ -10,7 +10,7 @@ tags:
 
 Let \(G(V,E)\) be a graph, \(v_i\) and \(v_j\) be two nodes of \(G\). We say a path between \(v_i\) and \(v_j\) is the shortest path if sum of the edge weights (cost) in the path is minimum. In other words, the shortest path problem is the problem of finding a path between two vertices (or nodes) in a graph such that the sum of the weights of its constituent edges is minimized. [5]
 
-<figure>
+<figure markdown="span">
 ![Shortest Path](img/shortest.png)
 <figcaption>Example shortest path in graph. Source is A and target is F. Image taken from [5].</figcaption>
 </figure>
