@@ -5,6 +5,7 @@ nav:
   - Introduction: introduction/index.md
   - Data Structures: data-structures/index.md
   - Algorithms: algorithms/index.md
+  - Graph: graph/index.md
   - Dynamic Programming: dynamic-programming/index.md
 theme:
   name: material
