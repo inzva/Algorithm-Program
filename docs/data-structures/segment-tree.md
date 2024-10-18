@@ -5,13 +5,12 @@ tags:
     - Segment Tree
 ---
 
-# Segment Tree
 Segment Tree is a data structure that enables us to answer queries like minimum, maximum, sum etc. for any $[l,r]$ interval in $\mathcal{O}(\log N)$ time complexity and update these intervals.
 
 Segment Tree is more useful than [Fenwick Tree](fenwick-tree.md) and [Sparse Table](sparse-table.md) structures because it allows updates on elements and provides the possibility to answer queries like minimum, maximum etc. for any $[l,r]$ interval. Also, the memory complexity of Segment Tree is $\mathcal{O}(N)$ while the memory complexity of the Sparse Table structure is $\mathcal{O}(N \log N)$.
 
 ## Structure and Construction
-Segment Tree has a "Complete Binary Tree" structure. The leaf nodes of the Segment Tree store the elements of the array, and each node's value is the sum of its children's values. Thus, the answers of certain intervals are stored in each node, and the answer of the whole array is stored in the root node. For example, for a Segment Tree structure built for the sum query, the value of each node is equal to the sum of its children's values.
+Segment Tree has a "Complete Binary Tree" structure. The leaf nodes of the Segment Tree store the elements of the array, and each internal node's value is calculated with a function that takes its children's values as inputs. Thus, the answers of certain intervals are stored in each node, and the answer of the whole array is stored in the root node. For example, for a Segment Tree structure built for the sum query, the value of each node is equal to the sum of its children's values.
 
 <figure markdown="span">
 ![segment tree structure to query sum on array a = [41,67,6,30,85,43,39]](img/segtree.png){ width="100%" }
@@ -33,9 +32,9 @@ void build(int ind, int l, int r) {
 }
 ```
 
-## Aralık Sorgu ve Eleman Güncelleme
+## Query and Update Algorithms
 
-### Sorgu Algoritması
+### Query Algorithm
 
 For any $[l,r]$ interval, the query algorithm works as follows:
 - Divide the $[l,r]$ interval into the widest intervals that are stored in the tree.
@@ -66,10 +65,9 @@ int query(int ind, int l, int r, int lw, int rw) {
 }
 ```
 
-### Eleman Güncelleme Algoritması
+### Update Algorithm
 
-The algorithm used to update the value of the $x$ indexed element in the array works as follows:
-- The value of the leaf node containing the $x$ indexed element is updated.
+Update the value of every node that contains $x$ indexed element.
 
 It is sufficient to update the values of at most $\log(N)$ nodes from the leaf node containing the $x$ indexed element to the root node. Therefore, the time complexity of updating the value of any element is $\mathcal{O}(\log N)$.
 
@@ -101,49 +99,28 @@ void update(int ind, int l, int r, int x, int val) {
 A sample problem related to the Segment Tree data structure can be found [here](https://codeforces.com/gym/100739/problem/A){target="_blank"}.
 
 ## Segment Tree with Lazy Propagation
-Previously, update function was called to update only a single value in array. Please
-note that a single value update in array may cause changes in multiple nodes in Segment Tree as
-there may be many segment tree nodes that have this changed single element in it’s range.
+Previously, update function was called to update only a single value in array. Please note that a single value update in array may cause changes in multiple nodes in Segment Tree as there may be many segment tree nodes that have this changed single element in it’s range.
 
 ### Lazy Propogation Algorithm
 We need a structure that can perform following operations on an array $[1,N]$.
 - Add inc to all elements in the given range $[l, r]$.
 - Return the sum of all elements in the given range $[l, r]$.
 
-Notice that if update was for single element, we could use the segment tree we have learned before.
-Trivial structure comes to mind is to use an array and do the operations by traversing and increasing
-the elements one by one. Both operations would take $\mathcal{O}(L)$ time complexity in this structure where
-$L$ is the number of elements in the given range.
+Notice that if update was for single element, we could use the segment tree we have learned before. Trivial structure comes to mind is to use an array and do the operations by traversing and increasing the elements one by one. Both operations would take $\mathcal{O}(L)$ time complexity in this structure where $L$ is the number of elements in the given range.
 
-Let’s use segment tree’s we have learned. Second operation is easy, We can do it in $\mathcal{O}(\log N)$. What
-about the first operation. Since we can do only single element update in the regular segment tree,
-we have to update all elements in the given range one by one. Thus we have to perform update
-operation $L$ times. This works in $\mathcal{O}(L \times \log N)$ for each range update. This looks bad, even worse than
-just using an array in a lot of cases.
+Let’s use segment tree’s we have learned. Second operation is easy, We can do it in $\mathcal{O}(\log N)$. What about the first operation. Since we can do only single element update in the regular segment tree, we have to update all elements in the given range one by one. Thus we have to perform update operation $L$ times. This works in $\mathcal{O}(L \times \log N)$ for each range update. This looks bad, even worse than just using an array in a lot of cases.
 
-So we need a better structure. People developed a trick called lazy propagation to perform range
-updates on a structure that can perform single update (This trick can be used in segment trees,
-treaps, k-d trees ...).
+So we need a better structure. People developed a trick called lazy propagation to perform range updates on a structure that can perform single update (This trick can be used in segment trees, treaps, k-d trees ...).
 
-Trick is to be lazy i.e, do work only when needed. Do the updates only when you have to. Using
-Lazy Propagation we can do range updates in $\mathcal{O}(\log N)$ on standart segment tree. This is definitely
-fast enough.
+Trick is to be lazy i.e, do work only when needed. Do the updates only when you have to. Using Lazy Propagation we can do range updates in $\mathcal{O}(\log N)$ on standart segment tree. This is definitely fast enough.
 
 ### Updates Using Lazy Propogation
-Let’s be <i>lazy</i> as told, when we need to update an interval, we will update a node and mark its
-children that it needs to be updated and update them when needed. For this we need an array
-$lazy[]$ of the same size as that of segment tree. Initially all the elements of the $lazy[]$ array will be $0$
-representing that there is no pending update. If there is non-zero element $lazy[k]$ then this element
-needs to update node k in the segment tree before making any query operation, then $lazy[2\cdot k]$ and
-$lazy[2 \cdot k + 1]$ must be also updated correspondingly.
+Let’s be <i>lazy</i> as told, when we need to update an interval, we will update a node and mark its children that it needs to be updated and update them when needed. For this we need an array $lazy[]$ of the same size as that of segment tree. Initially all the elements of the $lazy[]$ array will be $0$ representing that there is no pending update. If there is non-zero element $lazy[k]$ then this element needs to update node k in the segment tree before making any query operation, then $lazy[2\cdot k]$ and $lazy[2 \cdot k + 1]$ must be also updated correspondingly.
 
 To update an interval we will keep 3 things in mind.
-- If current segment tree node has any pending update, then first add that pending update to
-current node and push the update to it’s children.
-- If the interval represented by current node lies completely in the interval to update, then update
-the current node and update the $lazy[]$ array for children nodes.
-- If the interval represented by current node overlaps with the interval to update, then update
-the nodes as the earlier update function.
+- If current segment tree node has any pending update, then first add that pending update to current node and push the update to it’s children.
+- If the interval represented by current node lies completely in the interval to update, then update the current node and update the $lazy[]$ array for children nodes.
+- If the interval represented by current node overlaps with the interval to update, then update the nodes as the earlier update function.
 
 ```c++
 void update(int node, int start, int end, int l, int r, int val) {
@@ -184,18 +161,10 @@ void update(int node, int start, int end, int l, int r, int val) {
 }
 ```
 
-This is the update function for given problem. Notice that when we arrive a node, all the updates that
-we postponed that would effect this node will be performed since we are pushing them downwards
-as we go to this node. Thus this node will keep the exact values when the range updates are done
-without lazy. So it’s seems like it is working. How about queries?
+This is the update function for given problem. Notice that when we arrive a node, all the updates that we postponed that would effect this node will be performed since we are pushing them downwards as we go to this node. Thus this node will keep the exact values when the range updates are done without lazy. So it’s seems like it is working. How about queries?
 
 ### Queries Using Lazy Propogation
-Since we have changed the update function to postpone the update operation, we will have to change
-the query function also. The only change we need to make is to check if there is any pending update
-operation on that node. If there is a pending update operation, first update the node and then work
-same as the earlier query function. As we told in the last subsection, all the postponed updates that
-would effect this node will be performed before we reach this node. So sum value we look for will be
-there, correctly!
+Since we have changed the update function to postpone the update operation, we will have to change the query function as well. The only change we need to make is to check if there is any pending update operation on that node. If there is a pending update, first update the node and then proceed the same way as the earlier query function. As mentioned in the previous subsection, all the postponed updates that would affect this node will be performed before we reach it. Therefore, the sum value we look for will be correct.
 
 ```c++
 int query(int node, int start, int end, int l, int r) {
@@ -229,25 +198,15 @@ int query(int node, int start, int end, int l, int r) {
     return (p1 + p2);
 }
 ```
-
-Notice that only difference with regular query function is pushing the lazy values downwards as we
-travel. This is a widely used trick. You can use it for dozens of different problems. But not all range
-problems. You may have noticed that we used some properties of adding operation here. We used
-the fact that increasing updates has associative property. We merged more than one updates in lazy
-array, we didn’t care about the order of this updates. This assumption must be made to use lazy
-propagation. Other properties that needed left as an exercise to the readers.
+Notice that the only difference with the regular query function is pushing the lazy values downwards as we traverse. This is a widely used trick applicable to various problems, though not all range problems. You may notice that we leveraged properties of addition here. The associative property of addition allows merging multiple updates in the lazy array without considering their order. This assumption is crucial for lazy propagation. Other necessary properties are left as an exercise to the reader.
 
 ## Binary Search on Segment Tree
-Assume we have an array A that contains elements between 1 and $M$. We have to perform 2 kinds
-of operations.
+Assume we have an array A that contains elements between 1 and $M$. We have to perform 2 kinds of operations.
 - Change the value of the element in given index i by x.
 - Return the value of the kth element on the array when sorted.
 
 ### How to Solve It Naively
-Let’s construct a frequency array, $F[i]$ will keep how many times number i occurs in our original
-array. So we want to find smallest $i$ such that $\sum_{j=1}^{i} F[i] \geq k$.
-. Then the number $i$ will be our answer
-for the query. And for updates we just have to change $F$ array accordingly.
+Let’s construct a frequency array, $F[i]$ will keep how many times number i occurs in our original array. So we want to find smallest $i$ such that $\sum_{j=1}^{i} F[i] \geq k$. Then the number $i$ will be our answer for the query. And for updates we just have to change $F$ array accordingly.
 
 <figure markdown="span">
 ![naive updates](img/naive_update.png){ width="100%" }
@@ -276,9 +235,7 @@ int query(int k) {
 ```
 
 ### How to Solve It With Segment Tree
-This is of course, slow. Let’s use segment tree’s to improve it. First we will construct a segment tree
-on $F$ array. Segment tree will perform single element updates and range sum queries. We will use
-binary search to find corresponding $i$ for $k^{th}$ element queries.
+This is of course, slow. Let’s use segment tree’s to improve it. First we will construct a segment tree on $F$ array. Segment tree will perform single element updates and range sum queries. We will use binary search to find corresponding $i$ for $k^{th}$ element queries.
 
 <figure markdown = "span">
 ![segment tree updates](img/updated_segtree.png){ width="100%" }
@@ -304,18 +261,10 @@ int query(int k) {
 }
 ```
 
-If you look at the code above you can notice that each update takes $\mathcal{O}(\log M)$ time and each query
-takes $\mathcal{O}(\log^{2} M)$ time, but we can do better.
+If you look at the code above you can notice that each update takes $\mathcal{O}(\log M)$ time and each query takes $\mathcal{O}(\log^{2} M)$ time, but we can do better.
 
 ### How To Speed Up?
-If you look at the segment tree solution on preceding subsection you can see that queries are performed
-in $\mathcal{O}(\log^{2} M)$ time. We can make is faster, actually we can reduce the time complexity to $\mathcal{O}(\log M)$
-which is same with the time complexity for updates. We will do the binary search when we are
-traversing the segment tree. We first will start from the root and look at its left child’s sum value, if
-this value is greater than k, this means our answer is somewhere in the left child’s subtree. Otherwise
-it is somewhere in the right child’s subtree. We will follow a path using this rule until we reach a
-leaf, then this will be our answer. Since we just traversed $\mathcal{O}(\log M)$ nodes (one node at each level),
-time complexity will be $\mathcal{O}(\log M)$. Look at the code below for better understanding.
+If you look at the segment tree solution on preceding subsection you can see that queries are performed in $\mathcal{O}(\log^{2} M)$ time. We can make is faster, actually we can reduce the time complexity to $\mathcal{O}(\log M)$ which is same with the time complexity for updates. We will do the binary search when we are traversing the segment tree. We first will start from the root and look at its left child’s sum value, if this value is greater than k, this means our answer is somewhere in the left child’s subtree. Otherwise it is somewhere in the right child’s subtree. We will follow a path using this rule until we reach a leaf, then this will be our answer. Since we just traversed $\mathcal{O}(\log M)$ nodes (one node at each level), time complexity will be $\mathcal{O}(\log M)$. Look at the code below for better understanding.
 
 <figure markdown = "span">
 ![solution of first query](img/query_soln.png){ width="100%" }
