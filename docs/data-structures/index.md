@@ -29,6 +29,10 @@ Bilgisayar biliminde veri yapıları, belirli bir eleman kümesi üzerinde verim
 ### [Sparse Table](sparse-table.md)
 ### [SQRT Decomposition](sqrt-decomposition.md)
 
+## Common Problems
+
+### [LCA](lowest-common-ancestor.md)
+
 ## Örnek Problemler
 
 Veri yapıları üzerinde pratik yapabilmeniz için önerilen problemler:
