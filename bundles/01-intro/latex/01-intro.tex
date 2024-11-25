@@ -43,9 +43,9 @@
 
 
 
-\newcommand{\mytitle}{\textbf{inzva Algorithm Programme 2018-2019\\ \ \\Bundle 1 \\ \ \\ Intro}}
+\newcommand{\mytitle}{\textbf{inzva Algorithm Program\\ \ \\Bundle 1 \\ \ \\ Intro}}
 \title{\vspace{-2em}\mytitle\vspace{-0.3em}}
-\author{\textbf{Editor}\\Muhammed Burak Bu\u{g}rul\\ \ \\ \textbf{Reviewers} \\ Kadir Emre Oto\\Yusuf Hakan Kalayc{\i}}
+\author{\textbf{Editor}\\Muhammed Burak Bu\u{g}rul\\ \ \\ \textbf{Reviewers} \\ Kadir Emre Oto\\Yusuf Hakan Kalayc{\i} \\ Emin Ers{ü}s}
 
 
 
@@ -320,11 +320,11 @@ Sometimes, usage of struct can change in C++. When you have a pointer to a struc
 \section{Big O Notation}
 
 When dealing with algorithms or coming up with a solution, we need to calculate how fast our algorithm or solution is. We can calculate this in terms of number of operations. Big O notation moves in exactly at this point. Big O notation gives an upper limit to these number of operations. The formal definition of Big O is\cite{bigo}:\\ \ \\
-Let f be a real or complex valued function and g a real valued function, both defined on some unbounded subset of the real positive numbers, such that g(x) is strictly positive for all large enough values of x. One writes:\\
+Let $f$ be a real or complex valued function and $g$ a real valued function, both defined on some unbounded subset of the real positive numbers, such that g(x) is strictly positive for all large enough values of $x$. One writes:\\
 $$f(x) = O(g(x)) \ as\  x -> \infty$$ \\ \ \\
-If and only if for all sufficiently large values of x, the absolute value of f(x) is at most a positive constant multiple of g(x). That is, f(x) = O(g(x)) if and only if there exists a positive real number M and a real number $x_0$ such that: \\
+If and only if for all sufficiently large values of x, the absolute value of $f(x)$ is at most a positive constant multiple of $g(x)$. That is, $f(x)$ = $O(g(x))$ if and only if there exists a positive real number M and a real number $x_0$ such that: \\
 $$|f(x)| \leq Mg(x)\ for \ all\ x\ such\ that\ x_0 \leq x$$
-In many contexts, the assumption that we are interested in the growth rate as the variable x goes to infinity is left unstated, and one writes more simply that:
+In many contexts, the assumption that we are interested in the growth rate as the variable $x$ goes to infinity is left unstated, and one writes more simply that:
 $$f(x) = O(g(x))$$
 
 Almost every case for competitive programming, basic understanding of Big O notation is enough to decide whether to implement a solution or not.
@@ -428,7 +428,7 @@ Let us calculate time complexity of iterative one. There are three basic operati
 
 % Insert recursion tree png here
 
-f() function called more than one for some values of n. Actually in every level, number of function calls doubles. So time complexity of the recursive implementation is $O(2^n)$. It is far away worse than the iterative one. Recursive one can be optimized by techniques like memoization, but it is another topic to learn in further weeks.
+fibonacci() function called more than one for some values of n. Actually in every level, number of function calls doubles. So time complexity of the recursive implementation is $O(2^n)$. It is far away worse than the iterative one. Recursive one can be optimized by techniques like memoization, but it is another topic to learn in further weeks.
 
 
 
@@ -620,7 +620,6 @@ int main(){
 }
 \end{minted}
 
-\cleardoublepage
 \textbf{Python:} Python lists already behave like vectors:
 
 \begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{python}
@@ -635,13 +634,34 @@ print(ar)
 \subsection{Stacks, Queues, and Deques}
 
 \textbf{C++:} They are no different than stack, queue and deque we already know. It provides the implementation, you can simply include the libraries and use them. See \href{http://www.cplusplus.com/reference/queue/queue/}{queue}, \href{http://www.cplusplus.com/reference/stack/stack/}{stack}, \href{http://www.cplusplus.com/reference/deque/deque/}{deque}
-
 \subsection{Priority Queues}
 It is basically a built-in heap structure. You can add an element in $O(logN)$ time, get the first item in $O(logN)$ time. The first item will be decided according to your choice of priority. This priority can be magnitude of value, enterence time etc.
 
-\textbf{C++: } The different thing for priority queue is you should add  \lstinline{#include <queue>}, not \lstinline{<priority_queue>}. You can find samples \href{http://www.cplusplus.com/reference/queue/priority_queue/}{here}. Again, you can define a priority queue with any type you want.
+\textbf{C++: }The different thing for priority queue is you should add \lstinline{#include <queue>}, not \lstinline{<priority_queue>}. You can find samples \href{http://www.cplusplus.com/reference/queue/priority_queue/}{here}. Again, you can define a priority queue with any type you want.
 
 \textbf{Note:} Default \lstinline{priority_queue} prioritizes elements by highest value first. \href{https://en.cppreference.com/w/cpp/container/priority_queue}{Here} is three ways of defining priority.
+
+\begin{minted}[frame=lines,linenos,fontsize=\footnotesize]{c++}
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main(){
+    priority_queue<int> pq;
+
+    for(int i = 0 ; i < 5 ; i ++){
+        pq.push(i);
+    }
+
+    while(!pq.empty()){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    // 4 3 2 1 0
+    return 0;
+}
+
+\end{minted}
 
 \textbf{Python: } You can use \href{https://docs.python.org/2/library/heapq.html}{heapq} in python
 
