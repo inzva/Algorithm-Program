@@ -103,6 +103,7 @@ Previously, update function was called to update only a single value in array. P
 
 ### Lazy Propogation Algorithm
 We need a structure that can perform following operations on an array $[1,N]$.
+
 - Add inc to all elements in the given range $[l, r]$.
 - Return the sum of all elements in the given range $[l, r]$.
 
@@ -118,6 +119,7 @@ Trick is to be lazy i.e, do work only when needed. Do the updates only when you 
 Let’s be <i>lazy</i> as told, when we need to update an interval, we will update a node and mark its children that it needs to be updated and update them when needed. For this we need an array $lazy[]$ of the same size as that of segment tree. Initially all the elements of the $lazy[]$ array will be $0$ representing that there is no pending update. If there is non-zero element $lazy[k]$ then this element needs to update node k in the segment tree before making any query operation, then $lazy[2\cdot k]$ and $lazy[2 \cdot k + 1]$ must be also updated correspondingly.
 
 To update an interval we will keep 3 things in mind.
+
 - If current segment tree node has any pending update, then first add that pending update to current node and push the update to it’s children.
 - If the interval represented by current node lies completely in the interval to update, then update the current node and update the $lazy[]$ array for children nodes.
 - If the interval represented by current node overlaps with the interval to update, then update the nodes as the earlier update function.
@@ -202,6 +204,7 @@ Notice that the only difference with the regular query function is pushing the l
 
 ## Binary Search on Segment Tree
 Assume we have an array A that contains elements between 1 and $M$. We have to perform 2 kinds of operations.
+
 - Change the value of the element in given index i by x.
 - Return the value of the kth element on the array when sorted.
 
@@ -240,8 +243,9 @@ This is of course, slow. Let’s use segment tree’s to improve it. First we wi
 <figure markdown = "span">
 ![segment tree updates](img/updated_segtree.png){ width="100%" }
 <figcaption>Segment Tree After First Update</figcaption>
+</figure>
 
-```c++
+```cpp
 void update(int i, int x) {
     update(1, 1, M, A[i], --F[A[i]]); // Decrement frequency of old value
     A[i] = x;                        // Update A[i] to new value
@@ -263,7 +267,7 @@ int query(int k) {
 
 If you look at the code above you can notice that each update takes $\mathcal{O}(\log M)$ time and each query takes $\mathcal{O}(\log^{2} M)$ time, but we can do better.
 
-### How To Speed Up?
+### How To Speed Up?
 If you look at the segment tree solution on preceding subsection you can see that queries are performed in $\mathcal{O}(\log^{2} M)$ time. We can make is faster, actually we can reduce the time complexity to $\mathcal{O}(\log M)$ which is same with the time complexity for updates. We will do the binary search when we are traversing the segment tree. We first will start from the root and look at its left child’s sum value, if this value is greater than k, this means our answer is somewhere in the left child’s subtree. Otherwise it is somewhere in the right child’s subtree. We will follow a path using this rule until we reach a leaf, then this will be our answer. Since we just traversed $\mathcal{O}(\log M)$ nodes (one node at each level), time complexity will be $\mathcal{O}(\log M)$. Look at the code below for better understanding.
 
 <figure markdown = "span">
@@ -271,7 +275,7 @@ If you look at the segment tree solution on preceding subsection you can see tha
 <figcaption>Solution of First Query</figcaption>
 </figure>
 
-```c++
+```cpp
 void update(int i, int x) {
     update(1, 1, M, A[i], --F[A[i]]); // Decrement frequency of old value
     A[i] = x;                         // Update A[i] to new value
