@@ -1,7 +1,3 @@
-Onsite Contest
+Contest
 --------------
-* https://www.hackerrank.com/inzva-01-intro-onsite-2018
-
-Online Contest
---------------
-* https://www.hackerrank.com/inzva-01-intro-online-2018
+* https://algoleague.com/contest/algorithm-program-intro-contest
