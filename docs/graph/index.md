@@ -15,10 +15,15 @@ title: Graph
 ### [Depth First Search](depth-first-search.md)
 ### [Breadth First Search](breadth-first-search.md)
 ### [Cycle Finding](cycle-finding.md)
+### [Bipartite Checking](bipartite-checking.md)
 ### [Union Find](union-find.md)
 ### [Shortest Path](shortest-path.md)
 ### [Minimum Spanning Tree](minimum-spanning-tree.md)
 ### [Topological Sort](topological-sort.md)
+### [Bridges and Articulation Points](bridges-and-articulation-points.md)
+### [Strong Connectivity and Biconnectivity](strong-connectivity-and-biconnectivity.md)
+### [Strongly Connected Components](strongly-connected-components.md)
+### [Max Flow](max-flow.md)
 
 ## References
 
