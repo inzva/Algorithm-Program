@@ -15,6 +15,7 @@ title: Graph
 ### [Depth First Search](depth-first-search.md)
 ### [Breadth First Search](breadth-first-search.md)
 ### [Cycle Finding](cycle-finding.md)
+### [Bipartite Checking](bipartite-checking.md)
 ### [Union Find](union-find.md)
 ### [Shortest Path](shortest-path.md)
 ### [Minimum Spanning Tree](minimum-spanning-tree.md)

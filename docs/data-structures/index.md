@@ -22,12 +22,14 @@ Bilgisayar biliminde veri yapıları, belirli bir eleman kümesi üzerinde verim
 ### [Deque](deque.md)
 ### [Fenwick Tree](fenwick-tree.md)
 ### [Segment Tree](segment-tree.md)
+### [Trie](trie.md)
 
 ## Statik Veri Yapıları
 
 ### [Prefix Sum](prefix-sum.md)
 ### [Sparse Table](sparse-table.md)
 ### [SQRT Decomposition](sqrt-decomposition.md)
+### [Mo's Algorithm](mo-algorithm.md)
 
 ## Common Problems
 
