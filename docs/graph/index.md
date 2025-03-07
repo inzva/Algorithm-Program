@@ -20,6 +20,10 @@ title: Graph
 ### [Shortest Path](shortest-path.md)
 ### [Minimum Spanning Tree](minimum-spanning-tree.md)
 ### [Topological Sort](topological-sort.md)
+### [Bridges and Articulation Points](bridges-and-articulation-points.md)
+### [Strong Connectivity and Biconnectivity](strong-connectivity-and-biconnectivity.md)
+### [Strongly Connected Components](strongly-connected-components.md)
+### [Max Flow](max-flow.md)
 
 ## References
 
